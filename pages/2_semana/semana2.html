@@ -4,159 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semana 2</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tus estilos (ahora deben ir después de Bootstrap para poder sobrescribir) -->
     <link rel="stylesheet" href="../../css/main.css" />
     <link rel="stylesheet" href="../../css/semanas.css" />
-    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+    <style>
+      .dropdown-item {
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <h1>Semana 2</h1>
-    </header>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">Curso XML</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">Inicio</a>
+            </li>
+            
+            <!-- Semana 1 -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Semana 1
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="week1Dropdown">
+                <li><a class="dropdown-item" href="../../pages/1_semana/semana1.html">Ir a la Semana 1</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../../pages/1_semana/Puntos/01_intro.html">XML - Historia, estructura y sintáxis</a></li>
+                <li><a class="dropdown-item" href="../../pages/1_semana/Puntos/02_etiquetas.html">Etiquetas, instrucciones de procesamiento</a></li>
+                <li><a class="dropdown-item" href="../../pages/1_semana/Puntos/03_declaracion.html">Declaración de tipos de documento</a></li>
+                <li><a class="dropdown-item" href="../../pages/1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a></li>
+              </ul>
+            </li>
+            
+            <!-- Semana 2 -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Semana 2
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="week2Dropdown">
+                <li><a class="dropdown-item active" href="../../pages/2_semana/semana2.html">Ir a la Semana 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../../pages/2_semana/Puntos/04_elaboracion.html">Elaboración de documentos válidos</a></li>
+                <li><a class="dropdown-item" href="../../pages/2_semana/Puntos/05_espacios.html">Uso de espacio de nombres</a></li>
+                <li><a class="dropdown-item" href="../../pages/2_semana/Puntos/06_ventajas.html">Ventajas de los espacios de nombres</a></li>
+                <li><a class="dropdown-item" href="../../pages/2_semana/Puntos/07_metodos.html">Métodos de definición de documentos XML</a></li>
+                <li><a class="dropdown-item" href="../../pages/2_semana/Puntos/02_ejercicios.html">Ejercicios 02</a></li>
+              </ul>
+            </li>
+            
+            <!-- Semana 3 -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Semana 3
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="week3Dropdown">
+                <li><a class="dropdown-item" href="../../pages/3_semana/semana3.html">Ir a la Semana 3</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../../pages/3_semana/Puntos/08_creacion.html">Creación de descripciones y asociaciones</a></li>
+                <li><a class="dropdown-item" href="../../pages/3_semana/Puntos/09_validacion.html">Herramientas de creación y validación</a></li>
+                <li><a class="dropdown-item" href="../../pages/3_semana/Puntos/10_extensibilidad.html">Extensibilidad de los esquemas</a></li>
+                <li><a class="dropdown-item" href="../../pages/3_semana/Puntos/11_documentacion.html">Documentación de especificaciones</a></li>
+              </ul>
+            </li>
+            
+            <!-- Semana 4 -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Semana 4
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="week4Dropdown">
+                <li><a class="dropdown-item" href="../../pages/4_semana/semana4.html">Ir a la Semana 4</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../../pages/4_semana/Puntos/12_yaml.html">YAML</a></li>
+                <li><a class="dropdown-item" href="../../pages/4_semana/Puntos/13_json.html">JSON</a></li>
+                <li><a class="dropdown-item" href="../../pages/4_semana/Puntos/14_markdown.html">Markdown</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Agregar al inicio del archivo de cada página -->
-    <div class="overlay"></div>
-    <div class="navbar-container">
-      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li class="main-nav-li">
-            <a href="../../index.html"><strong>Inicio</strong></a>
-          </li>
-          <li class="main-nav-li">
-            <a href="../1_semana/semana1.html" class="toggle-week"
-              ><strong>&darr; Semana 1</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../1_semana/semana1.html">Ir a la Semana 1</a>
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/01_intro.html"
-                  >XML - Historia, estructura y sintáxis</a
-                >
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/02_etiquetas.html"
-                  >Etiquetas, instrucciones de procesamiento y referencia a
-                  entidades</a
-                >
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/03_declaracion.html"
-                  >Declaración de tipos de documento</a
-                >
-              </li>
-              <li><a href="../1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a></li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="./semana2.html" class="toggle-week"
-              ><strong>&darr; Semana 2</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href=".semana2.html">Ir a la Semana 2</a>
-              </li>
-              <li>
-                <a href="./Puntos/04_elaboracion.html"
-                  >Elaboración de documentos XML válidos y bien formados</a
-                >
-              </li>
-              <li>
-                <a href="./Puntos/05_espacios.html">
-                  Uso de espacios de nombres en XML - definición, referencia y
-                  prefijos</a
-                >
-              </li>
-              <li>
-                <a href="./Puntos/06_ventajas.html"
-                  >Ventajas de los espacios de nombres</a
-                >
-              </li>
-              <li>
-                <a href="./Puntos/07_metodos.html"
-                  >Métodos de definición de documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="./Puntos/02_ejercicios.html"
-                  >Ejercicios 02</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../3_semana/semana3.html" class="toggle-week"
-              ><strong>&darr; Semana 3</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../3_semana/semana3.html">Ir a la Semana 3</a>
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/08_creacion.html"
-                  >Creación de descripciones y asociación con documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/09_validacion.html"
-                  >Validación - herramientas de creación y validación</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/10_extensibilidad.html"
-                  >Extensibilidad de los esquemas - tipos derivados y esquemas
-                  para múltiples documentos</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/11_documentacion.html"
-                  >Documentación de especificaciones</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/03_ejercicios.html"
-                  >Ejercicios 03</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../4_semana/semana4.html" class="toggle-week"
-              ><strong>&darr; Semana 4</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../4_semana/semana4.html">Ir a la Semana 4</a>
-              </li>
-              <li>
-                <a href="../4_semana/Puntos/12_yaml.html"
-                  >Otros lenguajes - YAML</a
-                >
-              </li>
-              <li>
-                <a href="../4_semana/Puntos/13_json.html"
-                  >Otros lenguajes - JSON</a
-                >
-              </li>
-              <li>
-                <a href="../4_semana/Puntos/14_markdown.html"
-                  >Otros lenguajes - Markdown</a
-                >
-              </li>
-              <li>
-                <a href="../4_semana/Puntos/04_ejercicios.html"
-                  >Ejercicios 04</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../formulario.html"><strong>Contacto</strong></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <header class="mt-5 pt-4 text-center bg-gradient">
+      <div class="container py-5">
+        <h1 class="display-4 fw-bold">Semana 2</h1>
+      </div>
+    </header>
 
     <section class="content">
       <h2>Puntos principales de esta semana</h2>
@@ -165,8 +111,8 @@
       <div class="points">
         <div class="point" id="punto4">
           <h3>
-            <a href="./Puntos/04_elaboracion.html"
-              >Punto 04 - Elaboración de documentos XML válidos y bien formados</a
+            <a href="../../pages/2_semana/Puntos/04_elaboracion.html"
+              >Elaboración de documentos válidos</a
             >
           </h3>
           <ul>
@@ -177,67 +123,62 @@
         </div>
         <div class="point" id="punto5">
           <h3>
-            <a href="./Puntos/05_espacios.html"
-              >Punto 05 - Uso de espacios de nombres en XML - definición, referencia y prefijos</a
+            <a href="../../pages/2_semana/Puntos/05_espacios.html"
+              >Uso de espacio de nombres</a
             >
           </h3>
           <ul>
-            <li>¿Qué son los espacios de nombres?</li>
-            <li>Definición de espacios de nombres</li>
-            <li>Referencia de espacios de nombres</li>
-            <li>Prefijos en espacios de nombres</li>
-            <li>Uso de espacios de nombres en atributos</li>
-            <li>Posibles conflictos y resolución</li>
+            <li>Estructura y sintaxis de espacios de nombres</li>
+            <li>Declaración y uso de espacios de nombres</li>
+            <li>Ejemplos prácticos</li>
           </ul>
         </div>
         <div class="point" id="punto6">
           <h3>
-            <a href="./Puntos/06_ventajas.html"
-              >Punto 06 - Ventajas de los espacios de nombre</a
+            <a href="../../pages/2_semana/Puntos/06_ventajas.html"
+              >Ventajas de los espacios de nombres</a
             >
           </h3>
           <ul>
-            <li>Introducción</li>
-            <li>Desambiguación de Elementos y Atributos</li>
-            <li>Organización y Mantenimiento del Documento</li>
-            <li>Interoperabilidad</li>
-            <li>Mejora en la validación</li>
-            <li>Escalabilidad y Flexibilidad</li>
+            <li>Beneficios de usar espacios de nombres</li>
+            <li>Resolución de conflictos de nombres</li>
+            <li>Casos de uso comunes</li>
           </ul>
         </div>
         <div class="point" id="punto7">
           <h3>
-            <a href="./Puntos/07_metodos.html"
-              >Punto 07 - Métodos de definición de documentos</a
+            <a href="../../pages/2_semana/Puntos/07_metodos.html"
+              >Métodos de definición de documentos XML</a
             >
           </h3>
           <ul>
-            <li>¿Qué son?</li>
-            <li>DTD (Definición de Tipos de Datos)</li>
-            <li>XML Schema (XSD - XSL Definition)</li>
-            <li>Diferencias clave entre DTD y XSD</li>
-            <li>Conclusión</li>
-            <li>Cosas a saber: ¿Qué son los Namespaces en XML?</li>
+            <li>DTD vs XML Schema</li>
+            <li>RELAX NG y otros estándares</li>
+            <li>Comparación de métodos</li>
           </ul>
         </div>
         <div class="point" id="ejercicios02">
           <h3>
-            <a href="./Puntos/02_ejercicios.html"
-              >02 Ejercicios</a
+            <a href="../../pages/2_semana/Puntos/02_ejercicios.html"
+              >Ejercicios 02</a
             >
           </h3>
           <ul>
             <li>
-                <!-- Poner aquí sobre que van los ejercicios -->
+              Ejercicios para practicar la creación y validación de documentos XML
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
+    <footer class="bg-light py-3 mt-auto">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2025 Grupo XML 1º DAW - Alex Vicente Lopez</p>
+      </div>
     </footer>
-    <script src="../../../js/navbar.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/navbar.js"></script>
   </body>
 </html>

@@ -30,7 +30,9 @@ function closeNavbar() {
   overlay.style.display = "none"; // Ocultar el overlay
 }
 
+// COMMENTED OUT: This code conflicts with Bootstrap's dropdown functionality
 // Función para alternar los puntos de cada semana
+/*
 document.querySelectorAll(".toggle-week").forEach(function (weekLink) {
   weekLink.addEventListener("click", function (event) {
     event.preventDefault(); // Evitar que el enlace redirija
@@ -44,3 +46,4 @@ document.querySelectorAll(".toggle-week").forEach(function (weekLink) {
     }
   });
 });
+*/

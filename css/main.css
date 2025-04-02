@@ -1,274 +1,191 @@
-/* Import Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+:root {
+    --primary-color: #2563eb;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --secondary-color: #64748b;
+    --accent-color: #3b82f6;
+    --border-color: #e2e8f0;
+}
 
-/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.8;
-  margin: 0;
-  background-color: #edede9;
-  color: #333;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navbar styles */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.dropdown-item {
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 /* Header styles */
 header {
-  background: linear-gradient(135deg, #d5bdaf, #d6ccc2);
-  color: #333;
-  text-align: center;
-  padding: 4rem 1rem;
-  min-height: 50px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    color: var(--text-color);
+    text-align: center;
+    padding: 6rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 56px; /* Compensate for fixed navbar */
 }
 
 header h1 {
-  font-size: 3.5rem;
-  margin: 0;
-  letter-spacing: 1px;
-  font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 header p {
-  font-size: 1.6rem;
-  margin-top: 0.8rem;
-  opacity: 0.9;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 1rem auto 0;
 }
 
-/* Main content */
+/* Content styles */
 .content {
-  width: 70%;
-  margin: 2rem auto;
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: #f5ebe0;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  flex: 1 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .content h2 {
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
-  color: #8b7d6b;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
-.content p {
-  font-size: 1.05rem;
-  color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.8;
+/* Card styles */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-/* Footer */
-footer {
-  background-color: #d5bdaf;
-  color: #333;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-footer p {
-  margin: 0;
-  font-size: 0.95rem;
-  opacity: 0.9;
+.card-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
 }
 
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+.card-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #d5bdaf;
-  text-decoration: underline;
+.card-title a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-/* Navigation */
-.navbar {
-  background-color: #d5bdaf;
-  padding: 0.8rem 1.5rem;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  overflow-y: auto;
-  top: 0;
-  z-index: 1000;
-  height: 65px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+/* Button styles */
+button, .button, .btn-outline-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
 }
 
-/* Personalización de la barra de desplazamiento */
-.navbar::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra de desplazamiento */
-  height: 8px; /* Altura de la barra de desplazamiento horizontal */
+button:hover, .button:hover, .btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
 }
 
-/* Estilo para el track (fondo de la barra de desplazamiento) */
-.navbar::-webkit-scrollbar-track {
-  background-color: #333; /* Fondo del track */
-  border-radius: 10px; /* Bordes redondeados del track */
+.btn-outline-primary {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
-/* Estilo para el pulgar (la parte que arrastra) */
-.navbar::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color del pulgar */
-  border-radius: 10px; /* Bordes redondeados del pulgar */
-}
-
-/* Estilo para el pulgar al pasar el ratón por encima */
-.navbar::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Color del pulgar al pasar el ratón */
-}
-
-/* For the weeks that will be togglable */
-ul .week-points {
-  display: none;
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-ul .week-points li {
-  font-size: 0.9rem;
-}
-
-/* Estilo para el overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Oscurecimiento */
-  backdrop-filter: blur(3px); /* Efecto de desenfoque */
-  display: none; /* Está oculto por defecto */
-  z-index: 1; /* Asegura que esté por encima del contenido */
-  transition: opacity 0.3s ease-in-out, backdrop-filter 0.6s ease-in-out; /* La transición del blur es más lenta */
-}
-
-/* Cuando el navbar está abierto, mostramos el overlay */
-.navbar.open ~ .overlay {
-  display: block;
-  opacity: 1;
-}
-
-/* Navbar configuraciones */
-.navbar-container {
-  display: flex;
-}
-
-.navbar {
-  position: fixed;
-  font-size: 16px;
-  top: 0;
-  left: -100%;
-  width: 350px;
-  height: 100%;
-  background-color: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 2;
-}
-
-.navbar.open {
-  left: 0;
-}
-
-.hamburger {
-  font-size: 30px;
-  padding: 20px;
-  cursor: pointer;
-  color: #333;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.navbar ul {
-  padding: 10px;
-  list-style-type: none;
-  margin: 0;
-  width: 100%;
-}
-
-.navbar li {
-  padding: 5px 0;
-}
-
-.navbar a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  padding: 3px;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  border-radius: 8px;
-  padding: 8px;
-}
-
-.navbar a:hover {
-  transform: scale(1.05);
-  background-color: #4d4d4d;
-}
-
-.close-btn {
-  background-color: #333;
-  color: white;
-  border: none;
-  font-size: 30px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-
-ul .week-points {
-  display: none;
-  list-style-type: disc;
-  padding-left: 20px;
-  font-size: 12px;
-}
-
-ul .week-points li {
-  font-size: 0.9rem;
-}
-
-/* Personalización de la barra de desplazamiento de la página */
-::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra de desplazamiento */
-  height: 8px; /* Altura de la barra de desplazamiento horizontal */
-}
-
-/* Estilo para el track (fondo de la barra de desplazamiento) */
-::-webkit-scrollbar-track {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0
-  ); /* Fondo con opacidad 0 (totalmente transparente) */
-  border-radius: 10px; /* Bordes redondeados del track */
-}
-
-/* Estilo para el pulgar (la parte que arrastra) */
-::-webkit-scrollbar-thumb {
-  background-color: #8b7d6b; /* Color del pulgar */
-  border-radius: 10px; /* Bordes redondeados del pulgar */
-}
-
-/* Estilo para el pulgar al pasar el ratón por encima */
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ad9a8f; /* Color del pulgar al pasar el ratón */
-}
-
-.enlace-contacto:hover {
-  color: #8a837c;
-}
+/* Form elements */

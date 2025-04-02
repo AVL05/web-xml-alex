@@ -1,64 +1,70 @@
-/* Estilo para la tabla */
-table {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    border-collapse: collapse; /* Elimina los espacios entre bordes */
-    margin: 20px 0; /* Espaciado superior e inferior */
-    font-size: 1em; /* Tamaño de fuente */
-    font-family: Arial, sans-serif; /* Fuente legible */
-    background-color: #f9f9f9; /* Fondo claro */
-    border: 1px solid #ddd; /* Borde general */
+.yaml-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
 }
 
-/* Estilo para las celdas */
-th, td {
-    border: 1px solid #ddd; /* Bordes para las celdas */
-    padding: 12px; /* Espaciado interno */
-    text-align: left; /* Alineación del texto */
+.yaml-content {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    font-family: monospace;
 }
 
-/* Estilo para el encabezado */
-th {
-    background-color: #007BFF; /* Fondo azul */
-    color: white; /* Texto blanco */
-    font-weight: bold; /* Negrita */
-    text-align: center; /* Centrado */
+.yaml-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Alternar colores en las filas */
-tr:nth-child(even) {
-    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+.yaml-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-/* Hover en las filas */
-tr:hover {
-    background-color: #e9ecef; /* Fondo más oscuro al pasar el cursor */
+.yaml-key {
+    color: var(--text-color);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.yaml-value {
+    color: var(--secondary-color);
+    margin-left: 1rem;
+}
+
+.yaml-block {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
 }
 
 /* Estilo para la caja de código */
 pre {
-    position: relative;
-    background-color: #f4f4f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 20px 0;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
     overflow: auto;
+    font-family: monospace;
+    line-height: 1.6;
 }
 
 /* Estilo para el botón de copiar */
 .copy-button {
-    position: relative;
-    display: block;
-    margin: 10px 0;
-    background-color: #007BFF;
+    display: inline-block;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
     cursor: pointer;
-    font-size: 0.9em;
-}
-
-.copy-button:hover {
-    background-color: #0056b3;
-}
+    font-size: 0.

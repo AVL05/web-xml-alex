@@ -1,72 +1,147 @@
-/* Estilos específicos para página index */
-/* Estilo para las semanas */
-
-/* Se ha modificado el header para que en el inicio sea más grande que las otras páginas */
-header {
-    padding: 96px;
+/* Index-specific styles */
+.index-header {
+    background-color: white;
+    padding: 6rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
-h1 {
-    font-size: 64px;
-}
-
-h2 {
-    font-size: 28px;
-    color: #837665;
-}
-
-.weeks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.week {
-    background-color: #faf1e9;
-    border: 1px solid #D6CCC2;
-    border-radius: 8px;
-    padding: 1rem;
-    flex: 0 0 48%;
-    box-shadow: 0 4px 8px rgba(213, 189, 175, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 48%;
-    box-sizing: border-box;
-    margin-bottom: 1.5rem;
-}
-
-.week:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(213, 189, 175, 0.3);
-}
-
-.week h3 {
-    color: #ad9d87;
-    font-size: 1.5rem;
+.index-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
-.week ul {
+.index-header p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.index-content {
+    padding: 4rem 2rem;
+}
+
+/* Week cards styling */
+.feature-grid,
+.week-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card,
+.week-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card:hover,
+.week-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card h3,
+.week-card .card-title a {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.feature-card p,
+.week-card p {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.week-card ul {
     list-style-type: disc;
-    margin: 0 0 0 1.5rem;
+    padding-left: 1.5rem;
     text-align: left;
 }
 
-/* Mejora de responsividad */
+.week-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.week-card ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.week-card ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+}
+
 @media (max-width: 768px) {
-    .weeks {
-        flex-direction: column; /* Tarjetas apiladas en pantallas pequeñas */
-        gap: 1rem;
+    .index-header {
+        padding: 4rem 1rem;
     }
-    
-    .week {
-        max-width: 100%;
-        flex: 1 1 100%;
-        margin-bottom: 1rem;
+
+    .index-header h1 {
+        font-size: 2.5rem;
     }
-    
-    .content {
-        width: 90%;
+
+    .index-header p {
+        font-size: 1.2rem;
+    }
+
+    .index-content {
+        padding: 2rem 1rem;
+    }
+
+    .feature-grid,
+    .week-cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .index-header h1 {
+        font-size: 2rem;
+    }
+
+    .index-header p {
+        font-size: 1rem;
+    }
+
+    .feature-card,
+    .week-card {
+        padding: 1.5rem;
     }
 }

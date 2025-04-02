@@ -1,151 +1,182 @@
-/* Teoría */
-
+/* Points and Score Display Styles */
 header h1 {
-  font-size: 40px;
+  font-size: 2.25rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-/* Contenido principal */
+/* Main content */
 section {
   flex: 1;
-  margin-left: 20px;
+  margin-left: 1.5rem;
   background: white;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
 }
 
 .titulo-section {
-  font-size: 2.2rem;
+  font-size: 1.75rem;
   text-align: center;
-  color: #8b7d6b;
-  text-decoration: underline;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
 }
 
 article {
   margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: #f9f7f2;
+  padding: 1.5rem;
+  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
 }
 
 article h2 {
-  font-size: 2rem;
-  color: #8b7d6b;
+  font-size: 1.5rem;
+  color: var(--text-color);
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 article p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--secondary-color);
   margin-bottom: 1rem;
 }
 
-/* Estilos generales */
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* Points Container */
+.points-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
 }
 
-/* Contenedor principal */
-main {
+.point-item {
   display: flex;
-  max-width: 1400px;
-  margin: auto;
-  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.point-value {
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 /* Sidebar */
 .sidebar {
-  width: 300px;
-  background: #f4f4f4;
-  padding: 15px;
+  width: 250px;
+  background: white;
+  padding: 1.5rem;
   position: sticky;
-  top: 10px;
+  top: 1rem;
   height: fit-content;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
 }
 
 .sidebar h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar ul li {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #333;
+  color: var(--secondary-color);
   display: block;
-  padding: 8px;
-  border-radius: 4px;
-  transition: background 0.3s;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  background: #ddd;
+  background: var(--background-color);
+  color: var(--primary-color);
 }
 
-/* Botón para ir arriba */
+/* Back to top button */
 .btn-subir {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: #333;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  opacity: 0; /* Empieza invisible */
-  transition: opacity 0.4s ease-in-out, background 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Efecto al pasar el ratón por encima */
 .btn-subir:hover {
-  background: #555;
+  transform: translateY(-2px);
 }
 
-/* Cuando el botón debe ser visible */
 .btn-subir.mostrar {
-  opacity: 1; /* Se hace visible */
+  opacity: 1;
 }
 
 .navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: 1.5rem 0;
 }
 
 .btn-siguiente {
   text-decoration: none;
-  padding: 10px 20px;
-  background-color: #8b7d6b; /* Color de fondo */
-  color: white; /* Color del texto */
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.2s ease-in-out;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-siguiente:hover {
-  background-color: #b4a38d; /* Cambio de color al pasar el mouse */
-  transform: scale(1.03);
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
 }
+
+/* Main container */
+main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* General body styles - handled in main.css */
+body {
+  font-family:
