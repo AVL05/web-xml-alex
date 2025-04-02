@@ -2,6 +2,8 @@
 
 ## Acerca de este Proyecto
 
+![Imagen](/assets/img/index.png)
+
 Este proyecto es un **trabajo colaborativo** realizado entre compañeros de clase de **1º de Desarrollo de Aplicaciones Web (DAW)**. Durante este tercer trimestre, hemos trabajado juntos para desarrollar esta página web, buscando y compartiendo conocimientos y habilidades adquiridas en nuestras clases de **programación, diseño web y trabajo en equipo**.
 
 Cada miembro del equipo ha contribuido en diferentes aspectos del desarrollo, desde la **creación del contenido y búsqueda de información** hasta la **implementación del diseño y la programación**, utilizando herramientas y tecnologías como **HTML**, **CSS**, **Bootstrap**, algo de **JavaScript** (en menor medida para interactividad y funcionalidades específicas), **GitHub**, y más.
