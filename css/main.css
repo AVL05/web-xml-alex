@@ -1,208 +1,191 @@
-/* Import Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
-/* Global styles - Sobrescribiendo Bootstrap */
 :root {
-  --primary-bg: #d5bdaf;
-  --secondary-bg: #f5ebe0;
-  --dark-text: #333;
-  --light-text: #555;
-  --accent-color: #8b7d6b;
+    --primary-color: #2563eb;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --secondary-color: #64748b;
+    --accent-color: #3b82f6;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #edede9;
-  color: var(--dark-text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navbar styles */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.dropdown-item {
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 /* Header styles */
 header {
-  background: linear-gradient(135deg, #d5bdaf, #d6ccc2);
-  color: var(--dark-text);
-  text-align: center;
-  padding: 6rem 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  margin-top: 56px; /* Compensa el navbar fijo */
+    background-color: white;
+    color: var(--text-color);
+    text-align: center;
+    padding: 6rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 56px; /* Compensate for fixed navbar */
 }
 
-.display-4 {
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-.lead {
-  opacity: 0.9;
+header p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 1rem auto 0;
 }
 
-/* Main content - Adaptado para Bootstrap */
+/* Content styles */
 .content {
-  background-color: var(--secondary-bg);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  padding: 2rem;
-  margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .content h2 {
-  color: var(--accent-color);
-  font-weight: 600;
-  letter-spacing: 0.5px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
-/* Footer */
-footer {
-  background-color: var(--primary-bg);
-  color: var(--dark-text);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  margin-top: auto;
-}
-
-/* Links */
-a {
-  color: inherit;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-a:hover {
-  color: var(--primary-bg);
-  text-decoration: underline;
-}
-
-/* Navbar Bootstrap personalizado */
-.navbar {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-light {
-  background-color: var(--primary-bg) !important;
-}
-
-.navbar-brand, .nav-link {
-  color: var(--dark-text) !important;
-  font-weight: 500;
-}
-
-.nav-link:hover {
-  color: #5a4a42 !important;
-}
-
-.dropdown-menu {
-  background-color: var(--secondary-bg);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-item {
-  color: var(--dark-text);
-}
-
-.dropdown-item:hover {
-  background-color: var(--primary-bg);
-  color: white;
-}
-
-/* Cards personalizadas */
+/* Card styles */
 .card {
-  border: 1px solid #D6CCC2;
-  background-color: #faf1e9;
-  transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(213, 189, 175, 0.3) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
 }
 
 .card-title a {
-  color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Personalización de la barra de desplazamiento */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.card-title a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
+/* Button styles */
+button, .button, .btn-outline-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
-  border-radius: 10px;
+button:hover, .button:hover, .btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ad9a8f;
-}
-
-/* Botones personalizados */
 .btn-outline-primary {
-  --bs-btn-color: var(--accent-color);
-  --bs-btn-border-color: var(--accent-color);
-  --bs-btn-hover-bg: var(--accent-color);
-  --bs-btn-hover-border-color: var(--accent-color);
-  --bs-btn-active-bg: var(--accent-color);
-  --bs-btn-active-border-color: var(--accent-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
-/* Estilos específicos para index.html */
-.index-header {
-  padding: 7rem 1rem;
-}
-
-.index-header h1 {
-  font-size: 3.5rem;
-}
-
-.index-header p {
-  font-size: 1.6rem;
-}
-
-/* Media Queries para responsividad */
-@media (max-width: 992px) {
-  .index-header {
-    padding: 6rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .index-header {
-    padding: 5rem 1rem;
-  }
-  
-  .index-header h1 {
-    font-size: 2.8rem;
-  }
-  
-  .index-header p {
-    font-size: 1.3rem;
-  }
-  
-  .content {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .index-header {
-    padding: 4rem 1rem;
-  }
-  
-  .index-header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .index-header p {
-    font-size: 1.1rem;
-  }
-  
-  .content {
-    padding: 1rem;
-  }
-}
+/* Form elements */
