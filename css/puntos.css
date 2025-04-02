@@ -1,0 +1,182 @@
+/* Points and Score Display Styles */
+header h1 {
+  font-size: 2.25rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Main content */
+section {
+  flex: 1;
+  margin-left: 1.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+.titulo-section {
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+article {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+article h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+article p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Points Container */
+.points-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+.point-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.point-value {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+.sidebar h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  display: block;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* Back to top button */
+.btn-subir {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-subir:hover {
+  transform: translateY(-2px);
+}
+
+.btn-subir.mostrar {
+  opacity: 1;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.btn-siguiente {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-siguiente:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* Main container */
+main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* General body styles - handled in main.css */
+body {
+  font-family:

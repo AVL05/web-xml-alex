@@ -1,0 +1,70 @@
+.yaml-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.yaml-content {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    font-family: monospace;
+}
+
+.yaml-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.yaml-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.yaml-key {
+    color: var(--text-color);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.yaml-value {
+    color: var(--secondary-color);
+    margin-left: 1rem;
+}
+
+.yaml-block {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+}
+
+/* Estilo para la caja de código */
+pre {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow: auto;
+    font-family: monospace;
+    line-height: 1.6;
+}
+
+/* Estilo para el botón de copiar */
+.copy-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-size: 0.
