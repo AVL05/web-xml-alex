@@ -1,734 +1,404 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Metadatos optimizados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAML</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documentación de Especificaciones XML - Curso XML</title>
+    <meta name="description" content="Estándares y guías técnicas para XML. Tercera semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="../../../css/main.css">
-    <link rel="stylesheet" href="../../../css/puntos.css">
-    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon.ico">
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../../../index.html">Curso XML</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="../../../index.html">Inicio</a>
-            </li>
-            
-            <!-- Semana 1 -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Semana 1
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="week1Dropdown">
-                <li><a class="dropdown-item" href="../../../1_semana/semana1.html">Ir a la Semana 1</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../../../1_semana/Puntos/01_intro.html">XML - Historia, estructura y sintáxis</a></li>
-                <li><a class="dropdown-item" href="../../../1_semana/Puntos/02_etiquetas.html">Etiquetas, instrucciones de procesamiento</a></li>
-                <li><a class="dropdown-item" href="../../../1_semana/Puntos/03_declaracion.html">Declaración de tipos de documento</a></li>
-                <li><a class="dropdown-item" href="../../../1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a></li>
-              </ul>
-            </li>
-            
-            <!-- Semana 2 -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Semana 2
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="week2Dropdown">
-                <li><a class="dropdown-item" href="../../../2_semana/semana2.html">Ir a la Semana 2</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../../../2_semana/Puntos/04_elaboracion.html">Elaboración de documentos válidos</a></li>
-                <li><a class="dropdown-item" href="../../../2_semana/Puntos/05_espacios.html">Uso de espacio de nombres</a></li>
-                <li><a class="dropdown-item" href="../../../2_semana/Puntos/06_ventajas.html">Ventajas de los espacios de nombres</a></li>
-                <li><a class="dropdown-item" href="../../../2_semana/Puntos/07_metodos.html">Métodos de definición de documentos XML</a></li>
-                <li><a class="dropdown-item" href="../../../2_semana/Puntos/02_ejercicios.html">Ejercicios 02</a></li>
-              </ul>
-            </li>
-            
-            <!-- Semana 3 -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Semana 3
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="week3Dropdown">
-                <li><a class="dropdown-item" href="../../../3_semana/semana3.html">Ir a la Semana 3</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../../../3_semana/Puntos/08_creacion.html">Creación de descripciones y asociaciones</a></li>
-                <li><a class="dropdown-item" href="../../../3_semana/Puntos/09_validacion.html">Herramientas de creación y validación</a></li>
-                <li><a class="dropdown-item" href="../../../3_semana/Puntos/10_extensibilidad.html">Extensibilidad de los esquemas</a></li>
-                <li><a class="dropdown-item" href="../../../3_semana/Puntos/11_documentacion.html">Documentación de especificaciones</a></li>
-              </ul>
-            </li>
-            
-            <!-- Semana 4 -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Semana 4
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="week4Dropdown">
-                <li><a class="dropdown-item" href="../../../4_semana/semana4.html">Ir a la Semana 4</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item active" href="../../../4_semana/Puntos/12_yaml.html">YAML</a></li>
-                <li><a class="dropdown-item" href="../../../4_semana/Puntos/13_json.html">JSON</a></li>
-                <li><a class="dropdown-item" href="../../../4_semana/Puntos/14_markdown.html">Markdown</a></li>
-                <li><a class="dropdown-item" href="../../../4_semana/Puntos/04_ejercicios.html">Ejercicios 04</a></li>
-              </ul>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="../../../pages/formulario.html">Contacto</a>
-            </li>
-          </ul>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/08_creacion.html">
+                                <i class="dropdown-icon">✏️</i> Creación descripciones
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_validacion.html">
+                                <i class="dropdown-icon">✅</i> Validación
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/10_extensibilidad.html">
+                                <i class="dropdown-icon">🔁</i> Extensibilidad
+                            </a></li>
+                            <li><a class="dropdown-item active" href="../../../pages/3_semana/Puntos/11_documentacion.html">
+                                <i class="dropdown-icon">📄</i> Documentación
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../../formulario.html" class="btn btn-primary ms-lg-3">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <main class="container my-5 pt-4">
-      <div class="content-wrapper">
-        <h1 class="mb-4">12. Otros lenguajes: YAML</h1>
-        <div class="point-content">
-          <article id="introduccion-yaml">
-            <h2>Introducción a YAML</h2>
-            <p>
-              YAML (acrónimo de "YAML Ain't Markup Language") es un formato de serialización de datos legible por humanos. Es comúnmente utilizado para archivos de configuración, pero podría ser usado en muchas aplicaciones donde los datos están siendo almacenados o transmitidos.
-            </p>
-            <p>
-              YAML fue diseñado para ser fácil de leer y escribir por humanos, a diferencia de formatos como XML que pueden ser más verbosos y difíciles de editar manualmente. Su sintaxis simple y su capacidad para representar estructuras de datos complejas lo hacen ideal para configuraciones y situaciones donde la legibilidad es importante.
-            </p>
-          </article>
-
-          <article id="caracteristicas-yaml">
-            <h2>Características Principales de YAML</h2>
-            <ul>
-              <li><strong>Legible por humanos:</strong> Utiliza espacios en blanco y sangría para definir la estructura, haciéndolo muy fácil de leer.</li>
-              <li><strong>Superset de JSON:</strong> Todo documento JSON válido es también un documento YAML válido.</li>
-              <li><strong>Referencias y anclas:</strong> Permite referenciar contenido dentro del mismo documento para evitar repeticiones.</li>
-              <li><strong>Múltiples documentos:</strong> Un solo archivo YAML puede contener múltiples documentos separados por '---'.</li>
-              <li><strong>Tipos de datos nativos:</strong> Soporta strings, números, booleanos, null, listas y diccionarios.</li>
-            </ul>
-          </article>
-
-          <article id="ventajas-yaml">
-            <h2>Ventajas de Usar YAML</h2>
-            <p>
-              YAML ofrece varias ventajas sobre otros formatos de serialización:
-            </p>
-            <ul>
-              <li><strong>Sintaxis concisa:</strong> Requiere menos caracteres para representar datos comparado con XML o JSON.</li>
-              <li><strong>Comentarios:</strong> A diferencia de JSON, YAML permite incluir comentarios.</li>
-              <li><strong>Jerarquía intuitiva:</strong> La estructura jerárquica se representa mediante indentación, lo que resulta más natural para leer.</li>
-              <li><strong>Versatilidad:</strong> Puede representar estructuras de datos complejas de manera clara.</li>
-              <li><strong>Amplio soporte:</strong> Disponible en la mayoría de lenguajes de programación modernos.</li>
-            </ul>
-          </article>
-
-          <article id="comparativa">
-            <h2>Comparativa con Otros Lenguajes de Serialización de Datos</h2>
-            <h3>YAML vs. XML</h3>
-            <p>
-              A diferencia de XML, YAML:
-            </p>
-            <ul>
-              <li>Es más conciso y requiere menos caracteres.</li>
-              <li>No utiliza etiquetas de apertura y cierre.</li>
-              <li>Representa estructura a través de indentación en lugar de etiquetas anidadas.</li>
-              <li>Es generalmente más fácil de leer y editar manualmente.</li>
-            </ul>
-            
-            <h3>YAML vs. JSON</h3>
-            <p>
-              Comparado con JSON, YAML:
-            </p>
-            <ul>
-              <li>No requiere comillas para strings simples.</li>
-              <li>Permite comentarios.</li>
-              <li>No necesita comas para separar elementos.</li>
-              <li>Utiliza indentación en lugar de llaves para definir estructura.</li>
-              <li>Soporta referencias a objetos (anclas).</li>
-            </ul>
-          </article>
-
-          <article id="ejemplos-yaml">
-            <h2>Ejemplos Prácticos de YAML</h2>
-            <h3>Documento Simple</h3>
-            <pre>
-# Este es un comentario
-nombre: Juan Pérez
-edad: 30
-desarrollador: true
-lenguajes:
-  - Python
-  - JavaScript
-  - PHP
-direccion:
-  calle: Avenida Principal 123
-  ciudad: Valencia
-  codigo_postal: 46001
-</pre>
-
-            <h3>Uso de Referencias</h3>
-            <pre>
-# Definición con una ancla
-persona_base: &persona_base
-  nombre: Desconocido
-  ocupacion: Desconocido
-  nacionalidad: Española
-
-# Uso de la referencia con sobrescritura
-persona1:
-  <<: *persona_base    # Incluye todos los campos de persona_base
-  nombre: Ana García    # Sobrescribe el nombre
-  ocupacion: Desarrolladora
-</pre>
-
-            <h3>Múltiples Documentos</h3>
-            <pre>
----
-# Primer documento
-servidor: produccion
-ip: 192.168.1.1
----
-# Segundo documento
-servidor: desarrollo
-ip: 192.168.1.2
-</pre>
-          </article>
-
-          <article id="webgrafia">
-            <h2>Webgrafía</h2>
-            <p>Fuentes consultadas:</p>
-            <ul>
-              <li><a href="https://yaml.org/" target="_blank">YAML Oficial</a></li>
-              <li><a href="https://learnxinyminutes.com/docs/yaml/" target="_blank">Learn X in Y minutes: YAML</a></li>
-              <li><a href="https://en.wikipedia.org/wiki/YAML" target="_blank">Wikipedia: YAML</a></li>
-            </ul>
-          </article>
-
-          <div class="d-flex justify-content-between mt-5">
-            <!-- Botón para ir al anterior punto -->
-            <a href="../semana4.html" class="btn btn-primary">
-              &larr; Volver a la Semana 4
-            </a>
-        
-            <!-- Botón para ir al siguiente punto -->
-            <a href="../Puntos/13_json.html" class="btn btn-primary">
-              Ir al siguiente punto &rarr;
-            </a>
-          </div>
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Tercera Semana</span>
+                <h1 class="hero-title">Documentación de <span class="text-gradient">Especificaciones XML</span></h1>
+                <p class="hero-subtitle">Estándares y guías técnicas para XML</p>
+            </div>
         </div>
-      </div>
+        <div class="hero-waves"></div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article" id="primer-punto">
+                <h2>¿Qué es la documentación de especificaciones?</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p>La documentación de especificaciones XML se refiere a los estándares y guías técnicas que definen cómo estructurar, validar y manipular documentos en XML (Extensible Markup Language).</p>
+                        <p class="mt-3">Las especificaciones se agrupan en 5 grandes categorías según su función dentro de XML. Las especificaciones oficiales están publicadas y pueden consultarse en la página del W3C.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="segundo-punto">
+                <h2>Especificaciones fundamentales</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Especificaciones esenciales
+                    </div>
+                    <div class="card-body">
+                        <p>Son las especificaciones esenciales sobre cómo se estructura y procesa XML:</p>
+                        <ul>
+                            <li><strong>XML 1.0:</strong> Define la sintaxis básica del lenguaje.</li>
+                            <li><strong>XML 1.1:</strong> Una versión con mejoras menores, poco utilizada.</li>
+                            <li><strong>Espacios de nombres:</strong> Permite evitar conflictos de nombres cuando se combinan distintos vocabularios XML.</li>
+                        </ul>
+                        <p class="mt-3">XML 1.1 fue introducido en 2004 e incluye mejoras como mayor compatibilidad con caracteres de Unicode, mayor flexibilidad en nombres y mejor manejo de los finales de línea.</p>
+                        <p>Sin embargo, tiene problemas de retrocompatibilidad con XML 1.0, por lo que no ha sido adoptado ampliamente. XML 1.0 sigue siendo el estándar más utilizado.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="tercer-punto">
+                <h2>Especificaciones para validación</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Validación de documentos
+                    </div>
+                    <div class="card-body">
+                        <p>Estas son las especificaciones que definen cómo se estructuran los datos XML:</p>
+                        <ul>
+                            <li><strong>DTD (Document Type Definition):</strong> La forma más antigua de definir la estructura de un XML.</li>
+                            <li><strong>XML Schema (XSD - XML Schema Definition):</strong> Lenguaje más avanzado que DTD para definir la estructura y tipos de datos en XML.</li>
+                            <li><strong>RELAX NG:</strong> Alternativa a XSD, más sencilla y flexible. RELAX NG tiene una sintaxis más clara y menos redundante, y permite reutilizar definiciones sin problemas.</li>
+                        </ul>
+                        <p class="mt-3">XSD es el estándar de W3C y está integrado en la mayoría de herramientas de XML.</p>
+                        
+                        <h5 class="mt-4">Ejemplo de definición RELAX NG:</h5>
+                        <pre class="code-block"><code>&lt;grammar xmlns="http://relaxng.org/ns/structure/1.0"&gt;
+    &lt;start&gt;
+        &lt;element name="libro"&gt;
+            &lt;element name="titulo"&gt;
+                &lt;text/&gt;
+            &lt;/element&gt;
+            &lt;element name="autor"&gt;
+                &lt;text/&gt;
+            &lt;/element&gt;
+        &lt;/element&gt;
+    &lt;/start&gt;
+&lt;/grammar&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="cuarto-punto">
+                <h2>Especificaciones para consultas y navegación</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Consulta de datos
+                    </div>
+                    <div class="card-body">
+                        <p>Estas especificaciones permiten acceder, extraer y manipular datos de los documentos XML:</p>
+                        <ul>
+                            <li><strong>XPath:</strong> Lenguaje para seleccionar nodos dentro de un documento XML.</li>
+                            <li><strong>XQuery:</strong> Lenguaje avanzado de consultas para extraer datos de XML (parecido a SQL pero para XML).</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">Ejemplo de XML:</h5>
+                        <pre class="code-block"><code>&lt;biblioteca&gt;
+    &lt;libro&gt;
+        &lt;titulo&gt;1984&lt;/titulo&gt;
+        &lt;autor&gt;George Orwell&lt;/autor&gt;
+    &lt;/libro&gt;
+    &lt;libro&gt;
+        &lt;titulo&gt;Un mundo feliz&lt;/titulo&gt;
+        &lt;autor&gt;Aldous Huxley&lt;/autor&gt;
+    &lt;/libro&gt;
+&lt;/biblioteca&gt;</code></pre>
+                        
+                        <h5 class="mt-4">Ejemplo de XPath:</h5>
+                        <pre class="code-block"><code>/biblioteca/libro -> selecciona todos los libros de biblioteca
+/biblioteca/libro/titulo -> obtiene todos los títulos de libros
+/biblioteca/libro[1]/titulo -> obtiene el título del primer libro
+/biblioteca/libro[titulo='1984']/autor -> obtiene el autor del libro 1984</code></pre>
+                        
+                        <h5 class="mt-4">Ejemplo de XQuery:</h5>
+                        <pre class="code-block"><code>for $l in /biblioteca/libro
+where $l/autor = "George Orwell"
+return $l/titulo</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="quinto-punto">
+                <h2>Especificaciones para transformación</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Transformación de documentos
+                    </div>
+                    <div class="card-body">
+                        <p>Permiten convertir documentos XML a otros formatos como HTML, JSON, CSV o incluso otros XML:</p>
+                        <ul>
+                            <li><strong>XSLT (Extensible Stylesheet Language Transformations):</strong> Permite transformar XML en otros formatos como HTML, JSON, etc.</li>
+                            <li><strong>XSL-FO (XSL Formatting Objects):</strong> Usado para formatear XML y generar documentos impresos o PDFs.</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">Ejemplo de XML de entrada:</h5>
+                        <pre class="code-block"><code>&lt;biblioteca&gt;
+    &lt;libro&gt;
+        &lt;titulo&gt;1984&lt;/titulo&gt;
+        &lt;autor&gt;George Orwell&lt;/autor&gt;
+    &lt;/libro&gt;
+    &lt;libro&gt;
+        &lt;titulo&gt;Un mundo feliz&lt;/titulo&gt;
+        &lt;autor&gt;Aldous Huxley&lt;/autor&gt;
+    &lt;/libro&gt;
+&lt;/biblioteca&gt;</code></pre>
+                        
+                        <h5 class="mt-4">Ejemplo de XSLT. XML a HTML:</h5>
+                        <pre class="code-block"><code>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+    &lt;xsl:template match="/"&gt;
+        &lt;html&gt;
+            &lt;body&gt;
+                &lt;h2&gt;Lista de libros&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;xsl:for-each select="biblioteca/libro"&gt;
+                        &lt;li&gt;&lt;xsl:value-of select="titulo"/&gt; - &lt;xsl:value-of select="autor"/&gt;&lt;/li&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+                        
+                        <h5 class="mt-4">Ejemplo de XSL-FO para transformar a PDF:</h5>
+                        <pre class="code-block"><code>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+    &lt;xsl:template match="/"&gt;
+        &lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+            &lt;fo:layout-master-set&gt;
+                &lt;fo:simple-page-master master-name="pagina" page-height="29.7cm" page-width="21cm" margin-top="2cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="2.5cm"&gt;
+                    &lt;fo:region-body/&gt;
+                &lt;/fo:simple-page-master&gt;
+            &lt;/fo:layout-master-set&gt;
+            &lt;fo:page-sequence master-reference="pagina"&gt;
+                &lt;fo:flow flow-name="xsl-region-body"&gt;
+                    &lt;fo:block font-size="14pt" font-weight="bold" text-align="center"&gt;
+                        Biblioteca
+                    &lt;/fo:block&gt;
+                    &lt;xsl:for-each select="biblioteca/libro"&gt;
+                        &lt;fo:block font-size="12pt" font-weight="bold" margin-top="10pt"&gt;
+                            &lt;xsl:value-of select="titulo"/&gt;
+                        &lt;/fo:block&gt;
+                        &lt;fo:block font-size="10pt" font-style="italic"&gt;
+                            &lt;xsl:value-of select="autor"/&gt;
+                        &lt;/fo:block&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/fo:flow&gt;
+            &lt;/fo:page-sequence&gt;
+        &lt;/fo:root&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                        <p class="mt-3">Si necesitas generar PDFs desde XML, XSL-FO es la mejor opción. Si quieres combinarlo con HTML, XSLT puede ayudarte.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="sexto-punto">
+                <h2>Especificaciones de aplicaciones</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">
+                        Aplicaciones especializadas
+                    </div>
+                    <div class="card-body">
+                        <p>Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:</p>
+                        <ul>
+                            <li><strong>SOAP (Simple Object Protocol):</strong> Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).</li>
+                            <li><strong>SVG (Scalable Vector Graphics):</strong> Lenguaje XML para gráficos vectoriales.</li>
+                            <li><strong>RSS y Atom:</strong> Formatos XML para sindicación de contenido en la web (feeds de noticias).</li>
+                            <li><strong>MathML:</strong> Lenguaje XML para representar expresiones matemáticas.</li>
+                            <li><strong>VoiceXML:</strong> Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.</li>
+                        </ul>
+                        
+                        <p class="mt-3">Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:</p>
+                        <ul>
+                            <li><strong>Mensajería y comunicación:</strong> SOAP, XMPP</li>
+                            <li><strong>Publicaciones y documentos:</strong> DITA, XHTML</li>
+                            <li><strong>Finanzas y negocios:</strong> XBRL, UBL</li>
+                            <li><strong>Ciencias y salud:</strong> HL7, CML</li>
+                            <li><strong>Gráficos y multimedia:</strong> SVG, SMIL</li>
+                            <li><strong>Datos y metadatos:</strong> RDF, OWL</li>
+                        </ul>
+                        
+                        <p>Si necesitas compartir datos estructurados, XML tiene una especificación para casi cualquier industria, cada una con su propia sintaxis y propósito especializado.</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="./10_extensibilidad.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Anterior: Extensibilidad
+                </a>
+                <a href="../../4_semana/Puntos/13_json.html" class="btn btn-primary">
+                    Siguiente: JSON <i class="ms-1">→</i>
+                </a>
+            </div>
+        </div>
     </main>
 
-    <footer class="bg-light py-3 mt-auto">
-      <div class="container text-center">
-        <p class="mb-0">&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i>🐦</i></a>
+                    <a href="#" aria-label="GitHub"><i>💻</i></a>
+                    <a href="#" aria-label="LinkedIn"><i>🔗</i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12. Otros lenguajes - YAML</title>
-    <link rel="stylesheet" href="../../../css/main.css">
-    <link rel="stylesheet" href="../../../css/puntos.css">
-    <link rel="stylesheet" href="../../../css/YAML.css">
-    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon.ico">
-  </head>
-  <body>
-    <header>
-      <h1>12. Otros lenguajes - YAML</h1>
-      <p>Semana 4</p>
-    </header>
-
-    <!-- Agregar al inicio del archivo de cada página -->
-    <div class="overlay"></div>
-    <div class="navbar-container">
-      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li class="main-nav-li">
-            <a href="../../index.html"><strong>Inicio</strong></a>
-          </li>
-          <li class="main-nav-li">
-            <a href="../1_semana/semana1.html" class="toggle-week"
-              ><strong>&darr; Semana 1</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../1_semana/semana1.html">Ir a la Semana 1</a>
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/01_intro.html"
-                  >XML - Historia, estructura y sintáxis</a
-                >
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/02_etiquetas.html"
-                  >Etiquetas, instrucciones de procesamiento y referencia a
-                  entidades</a
-                >
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/03_declaracion.html"
-                  >Declaración de tipos de documento</a
-                >
-              </li>
-              <li>
-                <a href="../1_semana/Puntos/01_ejercicios.html"
-                  >Ejercicios 01</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../2_semana/semana2.html" class="toggle-week"
-              ><strong>&darr; Semana 2</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../2_semana/semana2.html">Ir a la Semana 2</a>
-              </li>
-              <li>
-                <a href="../2_semana/Puntos/04_elaboracion.html"
-                  >Elaboración de documentos XML válidos y bien formados</a
-                >
-              </li>
-              <li>
-                <a href="../2_semana/Puntos/05_espacios.html">
-                  Uso de espacios de nombres en XML - definición, referencia y
-                  prefijos</a
-                >
-              </li>
-              <li>
-                <a href="../2_semana/Puntos/06_ventajas.html"
-                  >Ventajas de los espacios de nombres</a
-                >
-              </li>
-              <li>
-                <a href="../2_semana/Puntos/07_metodos.html"
-                  >Métodos de definición de documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="../2_semana/Puntos/02_ejercicios.html"
-                  >Ejercicios 02</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../3_semana/semana3.html" class="toggle-week"
-              ><strong>&darr; Semana 3</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../3_semana/semana3.html">Ir a la Semana 3</a>
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/08_creacion.html"
-                  >Creación de descripciones y asociación con documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/09_validacion.html"
-                  >Validación - herramientas de creación y validación</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/10_extensibilidad.html"
-                  >Extensibilidad de los esquemas - tipos derivados y esquemas
-                  para múltiples documentos</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/11_documentacion.html"
-                  >Documentación de especificaciones</a
-                >
-              </li>
-              <li>
-                <a href="../3_semana/Puntos/03_ejercicios.html"
-                  >Ejercicios 03</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="./semana4.html" class="toggle-week"
-              ><strong>&darr; Semana 4</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="./semana4.html">Ir a la Semana 4</a>
-              </li>
-              <li>
-                <a href="./12_yaml.html">Otros lenguajes - YAML</a>
-              </li>
-              <li>
-                <a href="./13_json.html">Otros lenguajes - JSON</a>
-              </li>
-              <li>
-                <a href="./14_markdown.html">Otros lenguajes - Markdown</a>
-              </li>
-              <li>
-                <a href="./04_ejercicios.html">Ejercicios 04</a>
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../formulario.html"><strong>Contacto</strong></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <li>
-              <a href="#introduccion">Introducción</a>
-            </li>
-            <li>
-              <a href="#caracteristicas">Características Principales de YAML</a>
-            </li>
-            <li>
-              <a href="#ventajas">Ventajas de Usar YAML</a>
-            </li>
-            <li>
-              <a href="#comparativa"
-                >Comparativa con Otros Lenguajes de Serialización de Datos</a
-              >
-            </li>
-            <li>
-              <a href="#ejemplos">Ejemplos Prácticos de YAML</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <section>
-        <h2>YAML: Un Lenguaje de Serialización de Datos</h2>
-
-        <article id="introduccion">
-          <h2>Introducción</h2>
-          <p>
-            YAML, cuyo acrónimo originalmente significaba "Yet Another Markup Language" 
-            pero se redefine como "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), 
-            es una herramienta versátil y poderosa. Su principal fortaleza reside en su capacidad 
-            para representar datos estructurados de manera legible para humanos, siendo ampliamente 
-            utilizado en configuraciones de software, infraestructura como código, intercambio de datos 
-            y automatización de procesos.
-          </p>
-        </article>
-
-        <article id="caracteristicas">
-          <h2>1. Características Principales de YAML</h2>
-          <h3>1.1. Legibilidad Humana</h3>
-          <p>
-            YAML está diseñado para ser fácil de leer y escribir para los
-            humanos. La sintaxis es simple y clara, lo que facilita la
-            comprensión y edición de los archivos.
-          </p>
-          <ul>
-            <li>
-              <strong>Formato Simplificado:</strong> YAML se construye con una sintaxis 
-              minimalista basada en indentación, evitando caracteres que complican la 
-              legibilidad como {}, [] o ;. Por ejemplo:
-            </li>
-            <pre><code>
-persona:
-  nombre: Alex
-    edad: 29 
-      ocupacion: Desarrollador
-            </code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-            <li>
-              <strong>Uso de Comentarios:</strong> Los comentarios se añaden con #, 
-              permitiendo documentar configuraciones dentro de los archivos:
-            </li>
-            <pre><code>
-#Informacion del usuario
-usuario:
-  nombre: Alex
-  activo: true
-                          </code></pre>
-                          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-
-          <li>
-            <strong>Estructura Basada en Espaciado:</strong> La indentación no solo es una 
-            característica estética, sino que define jerarquías y relaciones entre los datos. 
-            Esto lo hace intuitivo y natural para los desarrolladores acostumbrados a lenguajes como Python.
-          </li>
-          </ul>
-          <h3>1.2. Soporte Extenso para Tipos de Datos</h3>
-          <p> YAML puede representar una gama variada de estructuras y tipos de datos:</p>
-          <ul>
-            <li>
-              <strong>Datos Escalares:</strong> Cadenas, enteros, decimales y valores booleanos (true/false).
-            </li>
-            <li>
-              <strong>Estructuras Complejas:</strong> Listas, mapas/diccionarios y mapas dentro de listas o listas dentro de mapas:
-            </li>
-            <pre><code>
-habilidades:
-  - programacion
-  - diseño
-  - liderazgo
-            </code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-            <pre><code>
-configuracion:
-  base_de_datos:
-    host: localhost
-    puerto: 5432
-  servidores:
-    - servidor1
-    - servidor2
-            </code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-            <li>
-              <strong>Cadenas Multilinea:</strong> Permite representar texto extenso en formato legible utilizando caracteres especiales:
-            </li>
-            <p> | (Bloque literal) conserva saltos de linea</p>
-            <pre><code>
-mensaje: |
-  Hola Alex,
-  Este es un texto que conserva el formato.
-            </code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-            <p>> (Bloque plegado) convierte saltos de linea en espacios</p>
-            <pre><code>
-descripcion: >
-  Este texto sera interpretado como una linea continua
-  aunque se escriba en varias lineas
-            </code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-          </ul>
-          <h3>1.3. Integración con Herramientas y Tecnologias</h3>
-          <p>Gracias a su diseño flexible, YAML se integra con un gran número de lenguajes de programación y plataformas:</p>
-          <ul>
-            <li>
-              <strong>Lenguajes de programacion:</strong>Soporte en Python (PyYAML), Ruby, Java, JavaScript (js-yaml), y otros.
-            </li>
-            <li>
-              <strong>Uso en DevOps y CI/CD:</strong> Es el estándar en herramientas como Kubernetes, Docker Compose, GitHub Actions, GitLab CI/CD, Ansible, y más.
-            </li>
-            <li>
-              <strong>Infraestructura como Codigo:</strong> Herramientas como Terraform pueden aprovechar archivos YAML para gestionar configuraciones complejas.
-            </li>
-          </ul>
-        </article>
-
-        <article id="ventajas">
-          <h2>2. Ventajas de Usar YAML</h2>
-          <h3>2.1. Facilidad de Uso</h3>
-          <ul>
-            <li>
-              <strong>Aprendizaje Intuitivo:</strong> Al estar basado en una estructura clara, los desarrolladores pueden adoptar YAML rápidamente sin necesidad de aprender convenciones complejas.
-            </li>
-            <li>
-              <strong>Depuración Simple:</strong> Los errores son fáciles de detectar debido a su diseño legible y su validación en herramientas modernas como Visual Studio Code, IntelliJ IDEA y editores especializados.
-            </li>
-          </ul>
-          <h3>2.2. Flexibilidad en Aplicaciones Complejas</h3>
-          <ul>
-            <li>
-              <strong>Organización Modular:</strong> Las configuraciones grandes se pueden dividir en múltiples archivos YAML, promoviendo la reutilización y mantenimiento.
-            </li>
-            <li>
-              <strong>Escalabilidad Natural:</strong> Desde configuraciones pequeñas hasta arquitecturas completas de microservicios, YAML puede manejar estructuras de datos complejas sin perder claridad.
-            </li>
-          </ul>
-          <h3>2.3. Interoperabilidad</h3>
-          <ul>
-            <li>
-              <strong>Conversión Simple:</strong> Herramientas automatizadas pueden convertir YAML a JSON o viceversa.
-            </li>
-            <li>
-              <strong>Adaptabilidad Multiplataforma:</strong> Es utilizado tanto en configuraciones locales como en la nube, haciendo que sistemas dispares sean más compatibles.
-            </li>
-          </ul>
-        </article>
-
-        <article id="comparativa">
-          <h2>3. Comparativa con Otros Lenguajes de Serialización</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Aspecto</th>
-                <th>YAML</th>
-                <th>JSON</th>
-                <th>XML</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Legibilidad</strong></td>
-                <td>Alta y basada en indentación</td>
-                <td>Moderada con llaves y corchetes</td>
-                <td>Baja debido a etiquetas verbosas</td>
-              </tr>
-              <tr>
-                <td><strong>Comentarios</strong></td>
-                <td>Soportados (<code>#</code>)</td>
-                <td>No soportados</td>
-                <td>Soportados con <code>&lt;!-- --&gt;</code></td>
-              </tr>
-              <tr>
-                <td><strong>Simplicidad</strong></td>
-                <td>Muy intuitivo</td>
-                <td>Compacto pero rígido</td>
-                <td>Complejo y detallado</td>
-              </tr>
-              <tr>
-                <td><strong>Uso Común</strong></td>
-                <td>Configuración y DevOps</td>
-                <td>API, transmisión de datos</td>
-                <td>Documentación y almacenamiento</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Ejemplo YAML frente a JSON</h3>
-          <p><strong>YAML:</strong></p>
-          <pre><code>
-producto:
-  nombre: Laptop
-  precio: 1200.50
-  características:
-    - pantalla: 15"
-    - procesador: Intel i7
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-
-          <p><strong>JSON:</strong></p>
-          <pre><code>
-{
-  "producto": {
-    "nombre": "Laptop",
-    "precio": 1200.50,
-    "características": [
-      { "pantalla": "15\"" },
-      { "procesador": "Intel i7" }
-    ]
-  }
-}
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-        </article>
-
-        <article id="ejemplos">
-          <h2>4. Casos Prácticos y Aplicaciones de YAML</h2>
-
-          <h3>4.1. Configuraciones para Herramientas DevOps</h3>
-          <p>Ejemplo para Ansible:</p>
-          <pre><code>
-- name: Configurar Servidores
-  hosts: web
-  tasks:
-    - name: Instalar Apache
-      apt:
-        name: apache2
-        state: present
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-
-          <h3>4.2. Orquestación de Contenedores con Docker Compose</h3>
-          <pre><code>
-version: '3.9'
-services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_PASSWORD: ejemplo
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-
-          <h3>4.3. Gestión de Recursos en Kubernetes</h3>
-          <pre><code>
-apiVersion: v1
-kind: Pod
-metadata:
-  name: ejemplo-pod
-spec:
-  containers:
-  - name: nginx
-    image: nginx:latest
-    ports:
-    - containerPort: 80
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-
-          <h3>4.4. Automatización de CI/CD</h3>
-          <p>Ejemplo de pipeline con GitHub Actions:</p>
-          <pre><code>
-name: Build and Test
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Tests
-        run: npm test
-</code></pre>
-          <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-        </article>
-        <div class="navegacion">
-          <!-- Botón para ir al anterior punto -->
-          <a href="../../3_semana/semana3.html" class="btn-siguiente">
-            &larr; Volver a la Semana 3
-          </a>
-        
-          <!-- Botón para ir al siguiente punto -->
-          <a href="./13_json.html" class="btn-siguiente">
-            Ir al siguiente punto &rarr;
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
-    </footer>
-
-    <button id="btnSubir" class="btn-subir">▲</button>
-
-    <script src="../../../js/navbar.js"></script>
-    <script src="../../../js/scrollToTop.js"></script>
-    <script src="../../../js/YAML.js"></script>
-  </body>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+</body>
 </html>
