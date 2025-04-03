@@ -1,147 +1,93 @@
-/* Index-specific styles */
-.index-header {
-    background-color: white;
-    padding: 6rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
+/* Efectos específicos para la página de inicio */
+.hero-section {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
 }
 
-.index-header h1 {
+.hero-title {
     font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1rem;
+    line-height: 1;
 }
 
-.index-header p {
-    font-size: 1.25rem;
-    color: var(--secondary-color);
-    max-width: 700px;
-    margin: 0 auto;
+.hero-subtitle {
+    font-size: 1.5rem;
 }
 
-.index-content {
-    padding: 4rem 2rem;
+/* Grid de semanas mejorado */
+.semanas-section {
+    padding: 4rem 0;
 }
 
-/* Week cards styling */
-.feature-grid,
-.week-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+/* Efectos hover para tarjetas */
+.semana-card {
+    position: relative;
+    overflow: hidden;
 }
 
-.feature-card,
-.week-card {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
+.semana-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.feature-card:hover,
-.week-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.semana-card:hover::before {
+    opacity: 1;
 }
 
-.feature-card h3,
-.week-card .card-title a {
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.feature-card p,
-.week-card p {
-    color: var(--secondary-color);
-    line-height: 1.6;
-}
-
-.week-card ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    text-align: left;
-}
-
-.week-card ul li {
-    margin-bottom: 0.5rem;
-}
-
-.week-card ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.week-card ul li a:hover {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.cta-section {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: var(--background-color);
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: var(--accent-color);
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-cta {
+        justify-content: center;
+    }
+    
+    .hero-code {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 2rem auto 0;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .index-header {
-        padding: 4rem 1rem;
-    }
-
-    .index-header h1 {
-        font-size: 2.5rem;
-    }
-
-    .index-header p {
-        font-size: 1.2rem;
-    }
-
-    .index-content {
-        padding: 2rem 1rem;
-    }
-
-    .feature-grid,
-    .week-cards-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .index-header h1 {
+    .hero-title {
         font-size: 2rem;
     }
-
-    .index-header p {
-        font-size: 1rem;
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
     }
-
-    .feature-card,
-    .week-card {
-        padding: 1.5rem;
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
     }
 }
