@@ -1,340 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>06. Ventajas de los espacios de nombres</title>
-    <link rel="stylesheet" href="../../../css/main.css" />
-    <link rel="stylesheet" href="../../../css/puntos.css" />
-    <link rel="stylesheet" href="../../../css/YAML.css" />
-    <link rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
-  </head>
-  <body>
-    <header>
-      <h1>06. Ventajas de los espacios de nombres</h1>
-      <p>Semana 2</p>
+    <!-- Metadatos optimizados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ventajas de los espacios de nombres - Curso XML</title>
+    <meta name="description" content="Beneficios y ventajas de utilizar espacios de nombres en XML. Segunda semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/1_semana/Puntos/01_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 01
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item active" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/2_semana/Puntos/02_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 02
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/07_xpath.html">
+                                <i class="dropdown-icon">🔍</i> XPath
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/08_xslt.html">
+                                <i class="dropdown-icon">🏷️</i> XSLT
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_dom.html">
+                                <i class="dropdown-icon">🔄</i> DOM
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/3_semana/Puntos/03_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 03
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/4_semana/Puntos/04_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 04
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../../formulario.html" class="btn btn-primary ms-lg-3">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Segunda Semana</span>
+                <h1 class="hero-title">Ventajas de los <span class="text-gradient">Espacios de Nombres</span></h1>
+                <p class="hero-subtitle">Beneficios clave al utilizar espacios de nombres en documentos XML</p>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
     </header>
 
-    <!-- Agregar al inicio del archivo de cada página -->
-    <div class="overlay"></div>
-    <div class="navbar-container">
-      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li class="main-nav-li">
-            <a href="../../../index.html"><strong>Inicio</strong></a>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../1_semana/semana1.html" class="toggle-week"
-              ><strong>&darr; Semana 1</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../1_semana/semana1.html">Ir a la Semana 1</a>
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/01_intro.html"
-                  >XML - Historia, estructura y sintáxis</a
-                >
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/02_etiquetas.html"
-                  >Etiquetas, instrucciones de procesamiento y referencia a
-                  entidades</a
-                >
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/03_declaracion.html"
-                  >Declaración de tipos de documento</a
-                >
-              </li>
-              <li><a href="../../1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a></li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="./semana2.html" class="toggle-week"
-              ><strong>&darr; Semana 2</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href=".semana2.html">Ir a la Semana 2</a>
-              </li>
-              <li>
-                <a href="./04_elaboracion.html"
-                  >Elaboración de documentos XML válidos y bien formados</a
-                >
-              </li>
-              <li>
-                <a href="./05_espacios.html">
-                  Uso de espacios de nombres en XML - definición, referencia y
-                  prefijos</a
-                >
-              </li>
-              <li>
-                <a href="./06_ventajas.html"
-                  >Ventajas de los espacios de nombres</a
-                >
-              </li>
-              <li>
-                <a href="./07_metodos.html"
-                  >Métodos de definición de documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="./02_ejercicios.html"
-                  >Ejercicios 02</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../3_semana/semana3.html" class="toggle-week"
-              ><strong>&darr; Semana 3</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../3_semana/semana3.html">Ir a la Semana 3</a>
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/08_creacion.html"
-                  >Creación de descripciones y asociación con documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/09_validacion.html"
-                  >Validación - herramientas de creación y validación</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/10_extensibilidad.html"
-                  >Extensibilidad de los esquemas - tipos derivados y esquemas
-                  para múltiples documentos</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/11_documentacion.html"
-                  >Documentación de especificaciones</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/03_ejercicios.html"
-                  >Ejercicios 03</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../4_semana/semana4.html" class="toggle-week"
-              ><strong>&darr; Semana 4</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../4_semana/semana4.html">Ir a la Semana 4</a>
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/12_yaml.html"
-                  >Otros lenguajes - YAML</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/13_json.html"
-                  >Otros lenguajes - JSON</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/14_markdown.html"
-                  >Otros lenguajes - Markdown</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/04_ejercicios.html"
-                  >Ejercicios 04</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../formulario.html"><strong>Contacto</strong></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article" id="introduccion">
+                <h2>Introducción</h2>
+                <p>
+                    Los espacios de nombres en XML son una característica esencial que facilita la creación de documentos XML claros, organizados y libres de conflictos. A continuación, se detallan las numerosas ventajas de utilizar espacios de nombres en XML.
+                </p>
+            </article>
 
-    <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <li>
-              <a href="#introduccion">Introducción</a>
-            </li>
-            <li>
-              <a href="#desambiguacion">Desambiguación de Elementos y Atributos</a>
-            </li>
-            <li>
-              <a href="#organizacion">Organización y Mantenimiento del Documento</a>
-            </li>
-            <li>
-              <a href="#interoperabilidad">Interoperabilidad</a>
-            </li>
-            <li>
-              <a href="#validacion">Mejora en la Validación</a>
-            </li>
-            <li>
-              <a href="#escalabilidad">Escalabilidad y Flexibilidad</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <section>
-          <h2>Ventajas de los Espacios de Nombres en XML</h2>
-
-          <article id="introduccion">
-            <h3>Introducción</h3>
-            <p>
-              Los espacios de nombres en XML son una característica esencial que facilita la creación de documentos XML claros, organizados y libres de conflictos. A continuación, se detallan las numerosas ventajas de utilizar espacios de nombres en XML.
-            </p>
-          </article>
-
-          <article id="desambiguacion">
-            <h3>1. Desambiguación de Elementos y Atributos</h3>
-
-            <h4>1.1. Evitar Conflictos de Nombres</h4>
-            <p>
-              En un documento XML, es posible que se necesiten usar nombres idénticos para elementos y atributos provenientes de diferentes vocabularios. Sin embargo, esto puede causar conflictos. Los espacios de nombres permiten diferenciar estos elementos y atributos, evitando colisiones de nombres.
-            </p>
-            <pre><code>
-&lt;libro xmlns:ns1="http://editorial1.com" xmlns:ns2="http://editorial2.com"&gt;
+            <article class="semana-article" id="desambiguacion">
+                <h2>1. Desambiguación de Elementos y Atributos</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Evitar Conflictos de Nombres
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            En un documento XML, es posible que se necesiten usar nombres idénticos para elementos y atributos provenientes de diferentes vocabularios. Sin embargo, esto puede causar conflictos. Los espacios de nombres permiten diferenciar estos elementos y atributos, evitando colisiones de nombres.
+                        </p>
+                        <pre class="code-block"><code>&lt;libro xmlns:ns1="http://editorial1.com" xmlns:ns2="http://editorial2.com"&gt;
     &lt;ns1:titulo&gt;Programación en Python&lt;/ns1:titulo&gt;
     &lt;ns2:titulo&gt;Introducción a la Filosofía&lt;/ns2:titulo&gt;
-&lt;/libro&gt;
-</code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
+&lt;/libro&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Compatibilidad con Múltiples Vocabularios
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Al utilizar espacios de nombres, es posible integrar múltiples vocabularios XML en un solo documento, sin que haya conflicto entre ellos. Esto es especialmente útil en aplicaciones que requieren combinar datos de diferentes fuentes.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-            <h4>1.2. Compatibilidad con Múltiples Vocabularios</h4>
-            <p>
-              Al utilizar espacios de nombres, es posible integrar múltiples vocabularios XML en un solo documento, sin que haya conflicto entre ellos. Esto es especialmente útil en aplicaciones que requieren combinar datos de diferentes fuentes.
-            </p>
-          </article>
-
-          <article id="organizacion">
-            <h3>2. Organización y Mantenimiento del Documento</h3>
-
-            <h4>2.1. Claridad y Orden</h4>
-            <p>
-              Los espacios de nombres proporcionan un contexto explícito para cada elemento y atributo, lo que mejora la claridad y organización del documento. Esto facilita la lectura y comprensión del mismo.
-            </p>
-
-            <h4>2.2. Facilita la Extensión</h4>
-            <p>
-              Permiten extender los vocabularios XML sin riesgo de conflictos, facilitando el mantenimiento y la evolución del documento. Esto es crucial para aplicaciones en constante desarrollo y actualización.
-            </p>
-            <pre><code>
-&lt;catalogo xmlns:lib="http://biblioteca.com/libros" xmlns:rev="http://biblioteca.com/revistas"&gt;
+            <article class="semana-article" id="organizacion">
+                <h2>2. Organización y Mantenimiento del Documento</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Claridad y Orden
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Los espacios de nombres proporcionan un contexto explícito para cada elemento y atributo, lo que mejora la claridad y organización del documento. Esto facilita la lectura y comprensión del mismo.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Facilita la Extensión
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Permiten extender los vocabularios XML sin riesgo de conflictos, facilitando el mantenimiento y la evolución del documento. Esto es crucial para aplicaciones en constante desarrollo y actualización.
+                        </p>
+                        <pre class="code-block"><code>&lt;catalogo xmlns:lib="http://biblioteca.com/libros" xmlns:rev="http://biblioteca.com/revistas"&gt;
     &lt;lib:titulo&gt;El Quijote&lt;/lib:titulo&gt;
     &lt;rev:titulo&gt;Ciencia Hoy&lt;/rev:titulo&gt;
-&lt;/catalogo&gt;
-</code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-          </article>
+&lt;/catalogo&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
 
-          <article id="interoperabilidad">
-            <h3>3. Interoperabilidad</h3>
-
-            <h4>3.1. Integración de Múltiples Fuentes</h4>
-            <p>
-              Los espacios de nombres facilitan la integración de datos de diversas fuentes, ya que cada fuente puede definir sus propios espacios de nombres sin interferir con los demás. Esto promueve la interoperabilidad entre diferentes sistemas y aplicaciones.
-            </p>
-
-            <h4>3.2. Reutilización de Componentes</h4>
-            <p>
-              Permiten la reutilización de componentes XML de diferentes fuentes o bibliotecas, promoviendo la interoperabilidad y la modularidad. Esto es esencial para el desarrollo de aplicaciones complejas y escalables.
-            </p>
-            <pre><code>
-&lt;documento xmlns:empresa="http://empresa.com" xmlns:proyecto="http://proyecto.com"&gt;
+            <article class="semana-article" id="interoperabilidad">
+                <h2>3. Interoperabilidad</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Integración de Múltiples Fuentes
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Los espacios de nombres facilitan la integración de datos de diversas fuentes, ya que cada fuente puede definir sus propios espacios de nombres sin interferir con los demás. Esto promueve la interoperabilidad entre diferentes sistemas y aplicaciones.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Reutilización de Componentes
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Permiten la reutilización de componentes XML de diferentes fuentes o bibliotecas, promoviendo la interoperabilidad y la modularidad. Esto es esencial para el desarrollo de aplicaciones complejas y escalables.
+                        </p>
+                        <pre class="code-block"><code>&lt;documento xmlns:empresa="http://empresa.com" xmlns:proyecto="http://proyecto.com"&gt;
     &lt;empresa:empleado&gt;
         &lt;empresa:nombre&gt;Juan Pérez&lt;/empresa:nombre&gt;
     &lt;/empresa:empleado&gt;
     &lt;proyecto:detalles&gt;
         &lt;proyecto:nombre&gt;Sistema de Gestión&lt;/proyecto:nombre&gt;
     &lt;/proyecto:detalles&gt;
-&lt;/documento&gt;
-</code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-          </article>
+&lt;/documento&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
 
-          <article id="validacion">
-            <h3>4. Mejora en la Validación</h3>
-
-            <h4>4.1. Validación Precisa</h4>
-            <p>
-              Los espacios de nombres ayudan en la validación precisa de los documentos XML, asegurando que cada elemento y atributo pertenezca al vocabulario correcto. Esto es crucial para mantener la integridad y consistencia de los datos.
-            </p>
-
-            <h4>4.2. Herramientas de Validación</h4>
-            <p>
-              Las herramientas y esquemas de validación pueden utilizar espacios de nombres para verificar la correcta estructura y semántica del documento. Esto facilita la detección de errores y la corrección de los mismos.
-            </p>
-            <pre><code>
-&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lib="http://biblioteca.com/libros"&gt;
+            <article class="semana-article" id="validacion">
+                <h2>4. Mejora en la Validación</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Validación Precisa
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Los espacios de nombres ayudan en la validación precisa de los documentos XML, asegurando que cada elemento y atributo pertenezca al vocabulario correcto. Esto es crucial para mantener la integridad y consistencia de los datos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Herramientas de Validación
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Las herramientas y esquemas de validación pueden utilizar espacios de nombres para verificar la correcta estructura y semántica del documento. Esto facilita la detección de errores y la corrección de los mismos.
+                        </p>
+                        <pre class="code-block"><code>&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lib="http://biblioteca.com/libros"&gt;
     &lt;xs:element name="libro" type="lib:LibroType"/&gt;
     &lt;xs:complexType name="LibroType"&gt;
         &lt;xs:sequence&gt;
             &lt;xs:element name="titulo" type="xs:string"/&gt;
         &lt;/xs:sequence&gt;
     &lt;/xs:complexType&gt;
-&lt;/xs:schema&gt;
-</code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-          </article>
+&lt;/xs:schema&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
 
-          <article id="escalabilidad">
-            <h3>5. Escalabilidad y Flexibilidad</h3>
-
-            <h4>5.1. Documentos Escalables</h4>
-            <p>
-              Los espacios de nombres permiten crear documentos XML que puedan escalar fácilmente con la incorporación de nuevos vocabularios y elementos. Esto es esencial para aplicaciones que crecen y evolucionan con el tiempo.
-            </p>
-
-            <h4>5.2. Flexibilidad en el Diseño</h4>
-            <p>
-              Ofrecen flexibilidad en el diseño de esquemas XML, permitiendo definir elementos complejos y específicos sin riesgo de colisión. Esto facilita la adaptación de los documentos a diversas necesidades y requisitos.
-            </p>
-            <pre><code>
-&lt;universidad xmlns:curso="http://universidad.com/cursos" xmlns:profesor="http://universidad.com/profesores"&gt;
+            <article class="semana-article" id="escalabilidad">
+                <h2>5. Escalabilidad y Flexibilidad</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Documentos Escalables
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Los espacios de nombres permiten crear documentos XML que puedan escalar fácilmente con la incorporación de nuevos vocabularios y elementos. Esto es esencial para aplicaciones que crecen y evolucionan con el tiempo.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Flexibilidad en el Diseño
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Ofrecen flexibilidad en el diseño de esquemas XML, permitiendo definir elementos complejos y específicos sin riesgo de colisión. Esto facilita la adaptación de los documentos a diversas necesidades y requisitos.
+                        </p>
+                        <pre class="code-block"><code>&lt;universidad xmlns:curso="http://universidad.com/cursos" xmlns:profesor="http://universidad.com/profesores"&gt;
     &lt;curso:informatica&gt;
         &lt;curso:nombre&gt;Algoritmos y Estructuras de Datos&lt;/curso:nombre&gt;
     &lt;/curso:informatica&gt;
     &lt;profesor:datos&gt;
         &lt;profesor:nombre&gt;María García&lt;/profesor:nombre&gt;
     &lt;/profesor:datos&gt;
-&lt;/universidad&gt;
-</code></pre>
-            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
-          </article>
-          <div class="navegacion">
-            <!-- Botón para ir al anterior punto -->
-            <a href="./05_espacios.html" class="btn-siguiente">
-              &larr; Volver al anterior punto
-            </a>
-          
-            <!-- Botón para ir al siguiente punto -->
-            <a href="./07_metodos.html" class="btn-siguiente">
-              Ir al siguiente punto &rarr;
-            </a>
-          </div>
-        </section>
-      </main>
-  
-      <footer>
-        <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
-      </footer>
-  
-      <button id="btnSubir" class="btn-subir">▲</button>
-  
-      <script src="../../../js/navbar.js"></script>
-      <script src="../../../js/scrollToTop.js"></script>
-    <script src="../../../js/YAML.js"></script>
-  </body>
+&lt;/universidad&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="./05_espacios.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Anterior: Espacios de nombres
+                </a>
+                <a href="./07_metodos.html" class="btn btn-primary">
+                    Siguiente: Métodos definición <i class="ms-1">→</i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i>🐦</i></a>
+                    <a href="#" aria-label="GitHub"><i>💻</i></a>
+                    <a href="#" aria-label="LinkedIn"><i>🔗</i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+</body>
 </html>

@@ -1,214 +1,285 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>07. Métodos de definición de documentos XML</title>
-    <link rel="stylesheet" href="../../../css/main.css" />
-    <link rel="stylesheet" href="../../../css/puntos.css" />
-    <link rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
-  </head>
-  <body>
-    <header>
-      <h1>07. Métodos de definición de documentos XML</h1>
-      <p>Semana 2</p>
+    <!-- Metadatos optimizados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Métodos de definición de documentos XML - Curso XML</title>
+    <meta name="description" content="DTD y XSD: métodos para definir la estructura de documentos XML. Segunda semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/1_semana/Puntos/01_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 01
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item active" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/2_semana/Puntos/02_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 02
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/07_xpath.html">
+                                <i class="dropdown-icon">🔍</i> XPath
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/08_xslt.html">
+                                <i class="dropdown-icon">🏷️</i> XSLT
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_dom.html">
+                                <i class="dropdown-icon">🔄</i> DOM
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/3_semana/Puntos/03_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 03
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                            <li><a class="dropdown-item dropdown-item-accent" href="../../../pages/4_semana/Puntos/04_ejercicios.html">
+                                <i class="dropdown-icon">💻</i> Ejercicios 04
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../../formulario.html" class="btn btn-primary ms-lg-3">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Segunda Semana</span>
+                <h1 class="hero-title">Métodos de Definición de <span class="text-gradient">Documentos XML</span></h1>
+                <p class="hero-subtitle">DTD y XSD: Estructurando documentos XML válidos</p>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
     </header>
 
-    <!-- Agregar al inicio del archivo de cada página -->
-    <div class="overlay"></div>
-    <div class="navbar-container">
-      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li class="main-nav-li">
-            <a href="../../../index.html"><strong>Inicio</strong></a>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../1_semana/semana1.html" class="toggle-week"
-              ><strong>&darr; Semana 1</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../1_semana/semana1.html">Ir a la Semana 1</a>
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/01_intro.html"
-                  >XML - Historia, estructura y sintáxis</a
-                >
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/02_etiquetas.html"
-                  >Etiquetas, instrucciones de procesamiento y referencia a
-                  entidades</a
-                >
-              </li>
-              <li>
-                <a href="../../1_semana/Puntos/03_declaracion.html"
-                  >Declaración de tipos de documento</a
-                >
-              </li>
-              <li><a href="../../1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a></li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="./semana2.html" class="toggle-week"
-              ><strong>&darr; Semana 2</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href=".semana2.html">Ir a la Semana 2</a>
-              </li>
-              <li>
-                <a href="./04_elaboracion.html"
-                  >Elaboración de documentos XML válidos y bien formados</a
-                >
-              </li>
-              <li>
-                <a href="./05_espacios.html">
-                  Uso de espacios de nombres en XML - definición, referencia y
-                  prefijos</a
-                >
-              </li>
-              <li>
-                <a href="./06_ventajas.html"
-                  >Ventajas de los espacios de nombres</a
-                >
-              </li>
-              <li>
-                <a href="./07_metodos.html"
-                  >Métodos de definición de documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="./02_ejercicios.html"
-                  >Ejercicios 02</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../3_semana/semana3.html" class="toggle-week"
-              ><strong>&darr; Semana 3</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../3_semana/semana3.html">Ir a la Semana 3</a>
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/08_creacion.html"
-                  >Creación de descripciones y asociación con documentos XML</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/09_validacion.html"
-                  >Validación - herramientas de creación y validación</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/10_extensibilidad.html"
-                  >Extensibilidad de los esquemas - tipos derivados y esquemas
-                  para múltiples documentos</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/11_documentacion.html"
-                  >Documentación de especificaciones</a
-                >
-              </li>
-              <li>
-                <a href="../../3_semana/Puntos/03_ejercicios.html"
-                  >Ejercicios 03</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../4_semana/semana4.html" class="toggle-week"
-              ><strong>&darr; Semana 4</strong></a
-            >
-            <ul class="week-points">
-              <li>
-                <a href="../../4_semana/semana4.html">Ir a la Semana 4</a>
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/12_yaml.html"
-                  >Otros lenguajes - YAML</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/13_json.html"
-                  >Otros lenguajes - JSON</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/14_markdown.html"
-                  >Otros lenguajes - Markdown</a
-                >
-              </li>
-              <li>
-                <a href="../../4_semana/Puntos/04_ejercicios.html"
-                  >Ejercicios 04</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="main-nav-li">
-            <a href="../../formulario.html"><strong>Contacto</strong></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <main>
-        <aside class="sidebar">
-            <nav class="nav-secundario">
-                <h2>Secciones</h2>
-                <ul>
-                    <li><a href="#que-son">¿Qué son?</a></li>
-                    <li><a href="#dtd">DTD (Definición de Tipo de Documento)</a></li>
-                    <li><a href="#xsd">XML Schema (XSD)</a></li>
-                    <li><a href="#diferencias">Diferencias entre DTD y XSD</a></li>
-                    <li><a href="#conclusion">Conclusión</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <section>
-            <article id="que-son">
-                <h2>¿Qué son?</h2>
-                <p>Son formas en que se pueden definir y estructurar los documentos XML para garantizar que sigan ciertas reglas y esquemas. Hay dos métodos principales:</p>
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article" id="que-son">
+                <h2>¿Qué son los métodos de definición?</h2>
+                <p>
+                    Son formas en que se pueden definir y estructurar los documentos XML para garantizar que sigan ciertas reglas y esquemas. Los dos métodos principales son DTD (Definición de Tipo de Documento) y XSD (XML Schema Definition).
+                </p>
+                
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle-fill"></i> Estos métodos permiten validar la estructura y contenido de los documentos XML, asegurando consistencia y validez.
+                </div>
             </article>
 
-            <article id="dtd">
+            <article class="semana-article" id="dtd">
                 <h2>1. DTD (Definición de Tipo de Documento)</h2>
-                <p>Es una forma antigua de definir la estructura de un documento XML. Algunas de sus características:</p>
-                <ul>
-                    <li>Especifica qué elementos y atributos están permitidos en un documento XML.</li>
-                    <li>No es compatible con XML Namespaces.</li>
-                    <li>Se define dentro del documento XML o en un archivo externo con extensión <code>.dtd</code>.</li>
-                    <li>Usa una sintaxis diferente a la de XML.</li>
-                </ul>
-                <h3>Ejemplo de DTD:</h3>
-                <pre>
-&lt;!DOCTYPE persona [
+                <p>
+                    Es una forma antigua pero aún utilizada de definir la estructura de un documento XML. Aunque menos potente que XSD, sigue siendo relevante por su simplicidad.
+                </p>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Características principales de DTD
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✅ Especifica qué elementos y atributos están permitidos</li>
+                            <li class="list-group-item">❌ No es compatible con XML Namespaces</li>
+                            <li class="list-group-item">📄 Se define dentro del documento XML o en archivo .dtd externo</li>
+                            <li class="list-group-item">⚙️ Usa una sintaxis diferente a XML</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Ejemplo de DTD
+                    </div>
+                    <div class="card-body">
+                        <pre class="code-block"><code>&lt;!DOCTYPE persona [
     &lt;!ELEMENT persona (nombre, edad)&gt;
     &lt;!ELEMENT nombre (#PCDATA)&gt;
     &lt;!ELEMENT edad (#PCDATA)&gt;
-]&gt;
-                </pre>
+]&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                        <p class="mt-3">Documento XML válido según este DTD:</p>
+                        <pre class="code-block"><code>&lt;persona&gt;
+    &lt;nombre&gt;Juan Pérez&lt;/nombre&gt;
+    &lt;edad&gt;30&lt;/edad&gt;
+&lt;/persona&gt;</code></pre>
+                    </div>
+                </div>
             </article>
 
-            <article id="xsd">
-                <h2>2. XML Schema (XSD - XML Schema Definition)</h2>
-                <p>Es un estándar más avanzado y flexible que DTD. Algunas características:</p>
-                <ul>
-                    <li>Usa una sintaxis basada en XML, lo que facilita su lectura y procesamiento.</li>
-                    <li>Soporta tipos de datos (números, fechas, booleanos, etc.).</li>
-                    <li>Es compatible con XML Namespaces.</li>
-                </ul>
-                <h3>Ejemplo de XSD:</h3>
-                <pre>
-&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+            <article class="semana-article" id="xsd">
+                <h2>2. XML Schema (XSD)</h2>
+                <p>
+                    Es el estándar moderno y más potente para definir la estructura de documentos XML. Ofrece muchas más capacidades que DTD.
+                </p>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Ventajas de XSD sobre DTD
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sintaxis XML</h5>
+                                        <p>Usa sintaxis basada en XML, lo que facilita su lectura y procesamiento.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tipos de datos</h5>
+                                        <p>Soporta tipos de datos avanzados (números, fechas, booleanos, etc.).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Namespaces</h5>
+                                        <p>Compatible con XML Namespaces para evitar conflictos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Validación compleja</h5>
+                                        <p>Permite reglas de validación más sofisticadas y detalladas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Ejemplo de XSD
+                    </div>
+                    <div class="card-body">
+                        <pre class="code-block"><code>&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
     &lt;xs:element name="persona"&gt;
         &lt;xs:complexType&gt;
             &lt;xs:sequence&gt;
@@ -217,66 +288,110 @@
             &lt;/xs:sequence&gt;
         &lt;/xs:complexType&gt;
     &lt;/xs:element&gt;
-&lt;/xs:schema&gt;
-                </pre>
+&lt;/xs:schema&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                        <p class="mt-3">Documento XML válido según este XSD:</p>
+                        <pre class="code-block"><code>&lt;persona&gt;
+    &lt;nombre&gt;Ana López&lt;/nombre&gt;
+    &lt;edad&gt;25&lt;/edad&gt;
+&lt;/persona&gt;</code></pre>
+                    </div>
+                </div>
             </article>
 
-            <article id="diferencias">
+            <article class="semana-article" id="diferencias">
                 <h2>Diferencias clave entre DTD y XSD</h2>
-                <table>
-                    <tr>
-                        <th>Característica</th>
-                        <th>DTD</th>
-                        <th>XSD</th>
-                    </tr>
-                    <tr>
-                        <td>Sintaxis</td>
-                        <td>Propia (no XML)</td>
-                        <td>Basada en XML</td>
-                    </tr>
-                    <tr>
-                        <td>Soporte de tipos de datos</td>
-                        <td>No</td>
-                        <td>Sí (números, fechas, etc.)</td>
-                    </tr>
-                    <tr>
-                        <td>Namespaces</td>
-                        <td>No</td>
-                        <td>Sí</td>
-                    </tr>
-                    <tr>
-                        <td>Expresividad</td>
-                        <td>Limitada</td>
-                        <td>Más flexible y detallada</td>
-                    </tr>
-                </table>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Característica</th>
+                                        <th>DTD</th>
+                                        <th>XSD</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sintaxis</td>
+                                        <td>Propia (no XML)</td>
+                                        <td>Basada en XML</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soporte de tipos de datos</td>
+                                        <td><span class="badge bg-danger">No</span></td>
+                                        <td><span class="badge bg-success">Sí</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Namespaces</td>
+                                        <td><span class="badge bg-danger">No</span></td>
+                                        <td><span class="badge bg-success">Sí</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Expresividad</td>
+                                        <td>Limitada</td>
+                                        <td>Más flexible y detallada</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Recomendación</td>
+                                        <td>Sistemas heredados</td>
+                                        <td>Aplicaciones modernas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </article>
 
-            <article id="conclusion">
+            <article class="semana-article" id="conclusion">
                 <h2>Conclusión</h2>
-                <p>Los métodos de definición de documentos XML son esenciales para validar la estructura y contenido de los documentos XML. Aunque DTD es más simple, XSD es más potente y recomendado para aplicaciones modernas.</p>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <p>
+                            Al elegir entre DTD y XSD para definir documentos XML:
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-light">✅ <strong>DTD</strong> es adecuado para sistemas simples o heredados</li>
+                            <li class="list-group-item bg-light">✅ <strong>XSD</strong> es la opción recomendada para aplicaciones modernas</li>
+                        </ul>
+                        <p class="mt-3">
+                            XSD ofrece mayor potencia y flexibilidad, especialmente cuando se trabaja con tipos de datos complejos o namespaces.
+                        </p>
+                    </div>
+                </div>
             </article>
-        <div class="navegacion">
-          <!-- Botón para ir al anterior punto -->
-          <a href="./06_ventajas.html" class="btn-siguiente">
-            &larr; Volver al anterior punto
-          </a>
-        
-          <!-- Botón para ir al siguiente punto -->
-          <a href="./02_ejercicios.html" class="btn-siguiente">
-            Ir a los ejercicios de esta Semana &rarr;
-          </a>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="./06_ventajas.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Anterior: Ventajas
+                </a>
+                <a href="./02_ejercicios.html" class="btn btn-primary">
+                    Siguiente: Ejercicios 02 <i class="ms-1">→</i>
+                </a>
+            </div>
         </div>
-      </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i>🐦</i></a>
+                    <a href="#" aria-label="GitHub"><i>💻</i></a>
+                    <a href="#" aria-label="LinkedIn"><i>🔗</i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <button id="btnSubir" class="btn-subir">▲</button>
-
-    <script src="../../../js/navbar.js"></script>
-    <script src="../../../js/scrollToTop.js"></script>
-  </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+</body>
 </html>
