@@ -1,56 +1,125 @@
-// Ruta del archivo XML
-const rutaXML = '../../data/forms/contactForm.xml';
+// equipo.js - Versión mejorada
 
-// Función para cargar y procesar el archivo XML
-fetch(rutaXML)
-    .then(response => response.text())
-    .then(data => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data, "application/xml");
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuración inicial
+    const RUTA_XML = '../../data/forms/contactForm.xml';
+    const CONTENEDOR_PRINCIPAL = document.getElementById('equipo-container');
+    const USUARIOS_POR_FILA = 3;
 
-        // Obtener todos los usuarios del XML
-        const usuarios = xmlDoc.getElementsByTagName("Usuario");
-        const contenidoDiv = document.getElementById("contenido");
+    // Función para crear elementos con atributos
+    const crearElemento = (tag, atributos = {}) => {
+        const elemento = document.createElement(tag);
+        Object.keys(atributos).forEach(key => {
+            elemento.setAttribute(key, atributos[key]);
+        });
+        return elemento;
+    };
 
-        let fila; // Contenedor para agrupar 3 tarjetas
+    // Función para sanitizar URLs
+    const sanitizarURL = (url) => {
+        return url === '#' || !url.trim() ? '#' : url;
+    };
 
-        for (let i = 0; i < usuarios.length; i++) {
-            if (i % 3 === 0) {
-                // Crear una nueva fila cada 3 usuarios
-                fila = document.createElement("div");
-                fila.className = "fila";
-                contenidoDiv.appendChild(fila);
+    // Función para crear tarjeta de usuario
+    const crearTarjetaUsuario = (usuario, index) => {
+        const nombre = usuario.querySelector('Nombre')?.textContent || 'Sin nombre';
+        const apellidos = usuario.querySelector('Apellidos')?.textContent || '';
+        const descripcion = usuario.querySelector('Descripcion')?.textContent || 'Sin descripción disponible';
+        
+        const redes = usuario.querySelector('RedesSociales');
+        const twitter = sanitizarURL(redes?.querySelector('Twitter')?.textContent || '#');
+        const instagram = sanitizarURL(redes?.querySelector('Instagram')?.textContent || '#');
+        const linkedin = sanitizarURL(redes?.querySelector('LinkedIn')?.textContent || '#');
+        const github = sanitizarURL(redes?.querySelector('GitHub')?.textContent || '#');
+
+        // Crear elementos
+        const col = crearElemento('div', {
+            'class': `col-md-6 col-lg-4 mb-4 usuario-${index}`
+        });
+
+        const card = crearElemento('div', {
+            'class': `team-card ${index % 2 === 0 ? '' : 'bg-accent'}`
+        });
+
+        const cardHeader = crearElemento('div', {
+            'class': `card-header ${index % 2 === 0 ? '' : 'bg-accent'}`
+        });
+
+        const cardBody = crearElemento('div', {
+            'class': 'card-body'
+        });
+
+        // Construir contenido
+        cardHeader.innerHTML = `
+            <span class="card-badge">Miembro</span>
+            <h3 class="card-title">${nombre} ${apellidos}</h3>
+        `;
+
+        let redesHTML = '<div class="social-links">';
+        if (twitter !== '#') redesHTML += `<a href="${twitter}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-twitter"></i></a>`;
+        if (instagram !== '#') redesHTML += `<a href="${instagram}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger me-2"><i class="bi bi-instagram"></i></a>`;
+        if (linkedin !== '#') redesHTML += `<a href="${linkedin}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-linkedin"></i></a>`;
+        if (github !== '#') redesHTML += `<a href="${github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark"><i class="bi bi-github"></i></a>`;
+        redesHTML += '</div>';
+
+        cardBody.innerHTML = `
+            <p class="card-text">${descripcion}</p>
+            ${redesHTML}
+        `;
+
+        // Ensamblar tarjeta
+        card.appendChild(cardHeader);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+
+        return col;
+    };
+
+    // Cargar y procesar XML
+    fetch(RUTA_XML)
+        .then(response => {
+            if (!response.ok) throw new Error('Error al cargar el XML');
+            return response.text();
+        })
+        .then(data => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, "application/xml");
+            
+            // Verificar errores de parseo
+            const errorNode = xmlDoc.querySelector('parsererror');
+            if (errorNode) {
+                throw new Error('Error al parsear el XML');
             }
 
-            const usuario = usuarios[i];
+            const usuarios = xmlDoc.querySelectorAll('Usuario');
+            
+            if (usuarios.length === 0) {
+                CONTENEDOR_PRINCIPAL.innerHTML = `
+                    <div class="alert alert-warning">
+                        No se encontraron miembros del equipo en el archivo XML.
+                    </div>
+                `;
+                return;
+            }
 
-            // Extraer datos del usuario
-            const nombre = usuario.getElementsByTagName("Nombre")[0]?.textContent || "Sin nombre";
-            const apellidos = usuario.getElementsByTagName("Apellidos")[0]?.textContent || "Sin apellidos";
-            const descripcion = usuario.getElementsByTagName("Descripcion")[0]?.textContent || "Sin descripción";
-            const twitter = usuario.getElementsByTagName("Twitter")[0]?.textContent || "#";
-            const instagram = usuario.getElementsByTagName("Instagram")[0]?.textContent || "#";
-            const linkedin = usuario.getElementsByTagName("LinkedIn")[0]?.textContent || "#";
-            const github = usuario.getElementsByTagName("GitHub")[0]?.textContent || "#";
+            // Crear filas y columnas responsivas
+            const row = crearElemento('div', {
+                'class': 'row justify-content-center'
+            });
 
-            // Crear el contenido HTML para el usuario
-            const usuarioDiv = document.createElement("div");
-            usuarioDiv.className = "usuario";
+            usuarios.forEach((usuario, index) => {
+                const tarjeta = crearTarjetaUsuario(usuario, index);
+                row.appendChild(tarjeta);
+            });
 
-            usuarioDiv.innerHTML = `
-                <h2>${nombre} ${apellidos}</h2>
-                <p>${descripcion}</p>
-                <h3>Redes Sociales</h3>
-                <ul>
-                    <li><strong><i class="fab fa-twitter"></i></strong> <a href="${twitter}" target="_blank">Sigueme en X</a></li>
-                    <li><strong><i class="fab fa-instagram"></i></strong> <a href="${instagram}" target="_blank">Sigueme en Instagram</a></li>
-                    <li><strong><i class="fab fa-linkedin"></i></strong> <a href="${linkedin}" target="_blank">Ir a LinkedIn</a></li>
-                    <li><strong><i class="fab fa-github"></i></strong> <a href="${github}" target="_blank">Ver mi GitHub</a></li>
-                </ul>
+            CONTENEDOR_PRINCIPAL.appendChild(row);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            CONTENEDOR_PRINCIPAL.innerHTML = `
+                <div class="alert alert-danger">
+                    Error al cargar la información del equipo: ${error.message}
+                </div>
             `;
-
-            // Añadir la tarjeta a la fila actual
-            fila.appendChild(usuarioDiv);
-        }
-    })
-    .catch(error => console.error('Error al cargar el archivo XML:', error));
+        });
+});

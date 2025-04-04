@@ -1,99 +1,70 @@
-.user-profile {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
+/* Estilos para la página de equipo */
+.team-hero {
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    padding: 6rem 0 4rem;
+    margin-top: 4rem;
+    text-align: center;
 }
 
-.user-header {
-    text-align: center;
+.team-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
     margin-bottom: 2rem;
 }
 
-.user-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 2px solid var(--border-color);
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-.user-name {
-    color: var(--text-color);
-    font-size: 1.75rem;
+.team-card .card-header {
+    padding: 1.25rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+}
+
+.team-card .card-header.bg-accent {
+    background: linear-gradient(135deg, var(--secondary) 0%, #0ea5e9 100%);
+}
+
+.card-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    font-weight: 600;
 }
 
-.user-info {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-}
-
-.user-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.stat-card {
-    background: var(--background-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.stat-value {
-    font-size: 2rem;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.stat-label {
-    color: var(--secondary-color);
-    margin-top: 0.5rem;
-}
-
-.user-content {
-    margin-top: 2rem;
-}
-
-.user-content ul {
+.social-links {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.user-content li {
-    margin: 0.75rem 0;
-    color: var(--text-color);
-    font-size: 1.1rem;
-}
-
-.user-content a {
-    color: var(--primary-color);
+.social-links a {
+    color: var(--primary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
-.user-content a:hover {
-    color: var(--accent-color);
+.social-links a:hover {
+    color: var(--primary-dark);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .user-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .user-profile {
-        padding: 1.5rem;
-    }
-    
-    .user-name {
-        font-size: 1.5rem;
+    .team-hero {
+        padding: 5rem 0 3rem;
     }
 }
