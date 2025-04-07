@@ -1,4 +1,12 @@
-// equipo.js - Versión mejorada
+// formulario.js - Versión mejorada con animaciones y manejo de errores
+
+// Detectar si estamos en GitHub Pages o en local
+const isGitHubPages = window.location.host.includes('github.io');
+
+// Definir rutas según el entorno
+const rutaXML = isGitHubPages 
+    ? '/web-xml-alex/data/forms/contactForm.xml'  // Ruta para GitHub Pages
+    : '../../data/forms/contactForm.xml';           // Ruta para desarrollo local
 
 document.addEventListener('DOMContentLoaded', function() {
     // Configuración inicial
