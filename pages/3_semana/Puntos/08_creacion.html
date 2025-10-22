@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos optimizados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Creación de Descripciones XML - Curso XML</title>
+    <meta name="description" content="Cómo crear y asociar descripciones DTD y XSD con documentos XML. Tercera semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="../../../pages/3_semana/Puntos/08_creacion.html">
+                                <i class="dropdown-icon">✏️</i> Creación descripciones
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_validacion.html">
+                                <i class="dropdown-icon">✅</i> Validación
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/10_extensibilidad.html">
+                                <i class="dropdown-icon">🔁</i> Extensibilidad
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/11_documentacion.html">
+                                <i class="dropdown-icon">📄</i> Documentación
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../formulario.html" class="btn btn-primary ms-lg-3">Equipo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Tercera Semana</span>
+                <h1 class="hero-title">Creación de <span class="text-gradient">Descripciones XML</span></h1>
+                <p class="hero-subtitle">DTD y XSD: Estructurando y asociando documentos XML</p>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article" id="creacion">
+                <h2>Creación y Asociación de Descripciones</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">Un XML sin descripción es difícil de entender y validar. Para mejorar la interpretación del documento y garantizar que los datos sean utilizados correctamente, se emplean DTD y XSD para definir la estructura de los datos.</p>
+                        <p class="card-text">Por ejemplo, si una empresa maneja datos de clientes en XML, definir una estructura con XSD asegurará que cada cliente tenga un nombre, dirección y teléfono correctamente formateados, evitando inconsistencias.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="dtd">
+                <h2>Validación con DTD</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Definición de Tipo de Documento (DTD)
+                    </div>
+                    <div class="card-body">
+                        <p>DTD define una estructura básica de XML. No permite definir tipos de datos específicos como números enteros o decimales, ya que todo es tratado como texto.</p>
+                        <h5 class="mt-4">Ejemplo de un DTD simple:</h5>
+                        <pre class="code-block"><code>&lt;!DOCTYPE empresa [
+    &lt;!ELEMENT empresa (nombre, direccion, telefono)&gt;
+    &lt;!ELEMENT nombre (#PCDATA)&gt;
+    &lt;!ELEMENT direccion (#PCDATA)&gt;
+    &lt;!ELEMENT telefono (#PCDATA)&gt;
+]&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="xsd">
+                <h2>Validación con XSD</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        XML Schema Definition (XSD)
+                    </div>
+                    <div class="card-body">
+                        <p>A diferencia de DTD, XSD permite definir tipos de datos específicos como números, fechas y booleanos.</p>
+                        <h5 class="mt-4">Ejemplo de un esquema XSD:</h5>
+                        <pre class="code-block"><code>&lt;xs:element name="cliente"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="nombre" type="xs:string" /&gt;
+            &lt;xs:element name="edad" type="xs:int" /&gt;
+            &lt;xs:element name="email" type="xs:string" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="esquemas">
+                <h2>Asociación de XML con su Esquema</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Vinculación de documentos
+                    </div>
+                    <div class="card-body">
+                        <p>Para vincular un XML con su XSD, se usa el atributo <code>xmlns:xsi</code> y <code>xsi:noNamespaceSchemaLocation</code>.</p>
+                        <h5 class="mt-4">Ejemplo de XML asociado:</h5>
+                        <pre class="code-block"><code>&lt;clientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="clientes.xsd"&gt;
+    &lt;cliente&gt;
+        &lt;nombre&gt;Juan Pérez&lt;/nombre&gt;
+        &lt;edad&gt;30&lt;/edad&gt;
+        &lt;email&gt;juan.perez@example.com&lt;/email&gt;
+    &lt;/cliente&gt;
+&lt;/clientes&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="metadatos">
+                <h2>RDF y OWL - Uso de Metadatos en XML</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Metadatos avanzados
+                    </div>
+                    <div class="card-body">
+                        <p>RDF (Resource Description Framework) permite describir recursos en la web, facilitando su organización y recuperación.</p>
+                        <p>OWL (Web Ontology Language) amplía RDF con estructuras más avanzadas, útiles para definir relaciones complejas.</p>
+                        <p class="mt-3"><strong>Ejemplo práctico:</strong> En un catálogo de libros XML, RDF puede usarse para agregar metadatos sobre autores, fechas de publicación y géneros.</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="../semana3.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Volver a Semana 3
+                </a>
+                <a href="./09_validacion.html" class="btn btn-primary">
+                    Siguiente: Validación <i class="ms-1">→</i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer moderno -->
+<footer class="footer bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="footer-brand d-flex align-items-center mb-3">
+                    <span class="logo-icon me-2">XML</span>
+                    <span class="logo-text h4 mb-0">Curso XML</span>
+                </div>
+                <p class="footer-description">
+                    Domina los formatos de datos esenciales para el desarrollo web moderno.
+                </p>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Contenido</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="../../../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                    <li class="mb-2"><a href="../../1_semana/semana1.html" class="text-white text-decoration-none">Semana 1</a></li>
+                    <li class="mb-2"><a href="../../2_semana/semana2.html" class="text-white text-decoration-none">Semana 2</a></li>
+                    <li class="mb-2"><a href="../../3_semana/semana3.html" class="text-white text-decoration-none">Semana 3</a></li>
+                    <li class="mb-2"><a href="../../4_semana/semana4.html" class="text-white text-decoration-none">Semana 4</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Recursos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://www.w3.org/XML/" target="_blank" class="text-white text-decoration-none">W3C XML</a></li>
+                    <li class="mb-2"><a href="https://developer.mozilla.org/es/docs/Web/XML" target="_blank" class="text-white text-decoration-none">MDN Web Docs</a></li>
+                    <li class="mb-2"><a href="https://json.org/" target="_blank" class="text-white text-decoration-none">JSON.org</a></li>
+                    <li class="mb-2"><a href="https://yaml.org/" target="_blank" class="text-white text-decoration-none">YAML Official</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-4 col-md-4">
+                <h5 class="text-uppercase mb-4">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:alexviclop@gmail.com" class="text-white text-decoration-none">alexviclop@gmail.com</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span>Torrent, Valencia, España</span>
+                    </li>
+                </ul>
+                <div class="mt-4">
+                    <a href="../../../pages/formulario.html" class="btn btn-outline-light">Equipo</a>
+                </div>
+            </div>
+        </div>
+  
+        <hr class="my-4 bg-secondary">
+  
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desarrollado por <a href="https://github.com/AVL05" target="_blank" class="text-white text-decoration-none">Alex Vicente Lopez</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+</body>
+</html>

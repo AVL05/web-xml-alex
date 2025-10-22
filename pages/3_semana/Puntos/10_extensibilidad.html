@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos optimizados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Extensibilidad de esquemas XML - Curso XML</title>
+    <meta name="description" content="Tipos derivados y esquemas para múltiples documentos. Tercera semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/08_creacion.html">
+                                <i class="dropdown-icon">✏️</i> Creación descripciones
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_validacion.html">
+                                <i class="dropdown-icon">✅</i> Validación
+                            </a></li>
+                            <li><a class="dropdown-item active" href="../../../pages/3_semana/Puntos/10_extensibilidad.html">
+                                <i class="dropdown-icon">🔁</i> Extensibilidad
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/11_documentacion.html">
+                                <i class="dropdown-icon">📄</i> Documentación
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../formulario.html" class="btn btn-primary ms-lg-3">Equipo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Tercera Semana</span>
+                <h1 class="hero-title">Extensibilidad de <span class="text-gradient">Esquemas XML</span></h1>
+                <p class="hero-subtitle">Tipos derivados y esquemas para múltiples documentos</p>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article" id="tipos">
+                <h2>Tipos derivados en XML Schema</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p>Los tipos derivados permiten crear nuevos tipos de datos basados en otros existentes, lo que mejora la reutilización y flexibilidad de los esquemas XML. Esto se puede hacer de dos formas principales:</p>
+                        <ul>
+                            <li><strong>Restricción:</strong> Se crean reglas más estrictas sobre un tipo base. Por ejemplo, si tenemos un tipo "string", podemos restringirlo para que solo acepte valores con un patrón específico.</li>
+                            <li><strong>Extensión:</strong> Se añaden nuevos elementos o atributos a un tipo base. Esto es útil cuando queremos ampliar la información de un elemento sin modificar su estructura original.</li>
+                        </ul>
+                        <p class="mt-3"><strong>Ejemplo práctico:</strong> Imagina una tienda en línea donde hay un tipo base "Producto" con elementos como "nombre" y "precio". Si queremos definir un tipo "Electrodoméstico" que, además de esos atributos, incluya "potencia" y "voltaje", podemos extender el tipo "Producto".</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="uso">
+                <h2>Uso de esquemas en múltiples documentos</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p>Muchas veces, un mismo esquema XML puede ser usado por varios documentos XML distintos. Esto se logra mediante referencias a esquemas externos y modularización.</p>
+                        <ul>
+                            <li><strong>Inclusión (<code>&lt;include&gt;</code>):</strong> Permite dividir un esquema grande en varios archivos más pequeños y reutilizables.</li>
+                            <li><strong>Importación (<code>&lt;import&gt;</code>):</strong> Se usa cuando los esquemas provienen de diferentes espacios de nombres.</li>
+                            <li><strong>Redefinición (<code>&lt;redefine&gt;</code>):</strong> Facilita la modificación de esquemas sin alterar los archivos originales.</li>
+                        </ul>
+                        <p class="mt-3"><strong>Ejemplo real:</strong> En una empresa de logística, se puede definir un esquema XML general para "Envío" y luego personalizarlo para distintas compañías sin necesidad de crear un esquema desde cero para cada una.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="rest">
+                <h2>Restricción</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Ejemplo de restricción
+                    </div>
+                    <div class="card-body">
+                        <p>La restricción permite limitar el contenido de un tipo de dato derivado a un subconjunto de los valores permitidos por el tipo base.</p>
+                        <pre class="code-block"><code>&lt;xs:simpleType name="TextoCorto"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:maxLength value="10"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="ext">
+                <h2>Extensión</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Ejemplo de extensión
+                    </div>
+                    <div class="card-body">
+                        <p>La extensión permite ampliar un tipo base agregando nuevos elementos o atributos.</p>
+                        <pre class="code-block"><code>&lt;xs:complexType name="Empleado"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="Persona"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="salario" type="xs:decimal"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="inc">
+                <h2>Inclusión</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Ejemplo de inclusión
+                    </div>
+                    <div class="card-body">
+                        <p>La inclusión permite dividir un esquema XML en varios archivos y reutilizar definiciones dentro del mismo espacio de nombres.</p>
+                        <pre class="code-block"><code>&lt;xs:include schemaLocation="base.xsd"/&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="imp">
+                <h2>Importación</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Ejemplo de importación
+                    </div>
+                    <div class="card-body">
+                        <p>La importación permite reutilizar esquemas XML que pertenecen a diferentes espacios de nombres.</p>
+                        <pre class="code-block"><code>&lt;xs:import namespace="http://ejemplo.com/direccion" schemaLocation="direccion.xsd"/&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article" id="red">
+                <h2>Redefinición</h2>
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">
+                        Ejemplo de redefinición
+                    </div>
+                    <div class="card-body">
+                        <p>La redefinición permite modificar tipos definidos en otro esquema sin necesidad de cambiar el esquema original.</p>
+                        <pre class="code-block"><code>&lt;xs:redefine schemaLocation="base.xsd"&gt;
+  &lt;xs:complexType name="Persona"&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="Persona"&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="telefono" type="xs:string"/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:redefine&gt;</code></pre>
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="copyToClipboard(this)">Copiar código</button>
+                    </div>
+                </div>
+            </article>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="./09_validacion.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Anterior: Validación
+                </a>
+                <a href="./11_documentacion.html" class="btn btn-primary">
+                    Siguiente: Documentación <i class="ms-1">→</i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer moderno -->
+<footer class="footer bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="footer-brand d-flex align-items-center mb-3">
+                    <span class="logo-icon me-2">XML</span>
+                    <span class="logo-text h4 mb-0">Curso XML</span>
+                </div>
+                <p class="footer-description">
+                    Domina los formatos de datos esenciales para el desarrollo web moderno.
+                </p>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Contenido</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="../../../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                    <li class="mb-2"><a href="../../1_semana/semana1.html" class="text-white text-decoration-none">Semana 1</a></li>
+                    <li class="mb-2"><a href="../../2_semana/semana2.html" class="text-white text-decoration-none">Semana 2</a></li>
+                    <li class="mb-2"><a href="../../3_semana/semana3.html" class="text-white text-decoration-none">Semana 3</a></li>
+                    <li class="mb-2"><a href="../../4_semana/semana4.html" class="text-white text-decoration-none">Semana 4</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Recursos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://www.w3.org/XML/" target="_blank" class="text-white text-decoration-none">W3C XML</a></li>
+                    <li class="mb-2"><a href="https://developer.mozilla.org/es/docs/Web/XML" target="_blank" class="text-white text-decoration-none">MDN Web Docs</a></li>
+                    <li class="mb-2"><a href="https://json.org/" target="_blank" class="text-white text-decoration-none">JSON.org</a></li>
+                    <li class="mb-2"><a href="https://yaml.org/" target="_blank" class="text-white text-decoration-none">YAML Official</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-4 col-md-4">
+                <h5 class="text-uppercase mb-4">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:alexviclop@gmail.com" class="text-white text-decoration-none">alexviclop@gmail.com</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span>Torrent, Valencia, España</span>
+                    </li>
+                </ul>
+                <div class="mt-4">
+                    <a href="../../../pages/formulario.html" class="btn btn-outline-light">Equipo</a>
+                </div>
+            </div>
+        </div>
+  
+        <hr class="my-4 bg-secondary">
+  
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desarrollado por <a href="https://github.com/AVL05" target="_blank" class="text-white text-decoration-none">Alex Vicente Lopez</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos optimizados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Historia y sintaxis XML - Curso XML</title>
+    <meta name="description" content="Introducción a XML: historia, estructura y sintaxis. Parte de la primera semana del curso.">
+    
+    <!-- Preconexiones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/components/semanas.css">
+    <link rel="stylesheet" href="../../../assets/css/components/puntos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Glass -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Semana 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="week1Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 1
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Introducción a XML</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/semana1.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="../../../pages/1_semana/Puntos/01_intro.html">
+                                <i class="dropdown-icon">🔍</i> Historia y sintaxis
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/02_etiquetas.html">
+                                <i class="dropdown-icon">🏷️</i> Etiquetas XML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/1_semana/Puntos/03_declaracion.html">
+                                <i class="dropdown-icon">📝</i> Declaraciones
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week2Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 2
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Documentos Válidos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/semana2.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/04_elaboracion.html">
+                                <i class="dropdown-icon">✅</i> Documentos válidos
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/05_espacios.html">
+                                <i class="dropdown-icon">🔣</i> Espacios nombres
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/06_ventajas.html">
+                                <i class="dropdown-icon">👍</i> Ventajas
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/2_semana/Puntos/07_metodos.html">
+                                <i class="dropdown-icon">📋</i> Métodos definición
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Semana 3 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week3Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Validación Avanzada</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/semana3.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/07_xpath.html">
+                                <i class="dropdown-icon">🔍</i> XPath
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/08_xslt.html">
+                                <i class="dropdown-icon">🏷️</i> XSLT
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/3_semana/Puntos/09_dom.html">
+                                <i class="dropdown-icon">🔄</i> DOM
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Semana 4 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="week4Dropdown" role="button" data-bs-toggle="dropdown">
+                            Semana 4
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-glass">
+                            <li><h6 class="dropdown-header">Otros Formatos</h6></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/semana4.html">
+                                <i class="dropdown-icon">📖</i> Teoría Principal
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/12_yaml.html">
+                                <i class="dropdown-icon">🔍</i> YAML
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/13_json.html">
+                                <i class="dropdown-icon">🏷️</i> JSON
+                            </a></li>
+                            <li><a class="dropdown-item" href="../../../pages/4_semana/Puntos/14_markdown.html">
+                                <i class="dropdown-icon">🔄</i> Markdown
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../../formulario.html" class="btn btn-primary ms-lg-3">Equipo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section semana-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Primera Semana</span>
+                <h1 class="hero-title">Historia y <span class="text-gradient">Sintaxis XML</span></h1>
+                <p class="hero-subtitle">Fundamentos, evolución y estructura básica del lenguaje XML</p>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="punto-content">
+            <article class="semana-article">
+                <h2>¿Qué es XML?</h2>
+                <p>
+                    XML es el acrónimo de "eXtensible Markup Language", que en español
+                    significa Lenguaje de Marcas Extensible. Se trata de un lenguaje de
+                    marcado con una estructura similar a HTML, pero con un enfoque
+                    diferente. Mientras que HTML está diseñado para mostrar información
+                    en un navegador web, XML se centra en almacenar y transportar datos
+                    de una manera estructurada y legible tanto para humanos como para
+                    máquinas.
+                </p>
+                <p>
+                    XML es un lenguaje altamente flexible y autodescriptivo, lo que
+                    significa que los datos contenidos en un documento XML pueden
+                    entenderse sin necesidad de programas adicionales o formatos
+                    predefinidos. Su principal ventaja es que permite definir etiquetas
+                    personalizadas para organizar la información de acuerdo con las
+                    necesidades específicas de cada usuario o aplicación.
+                </p>
+            </article>
+
+            <article class="semana-article">
+                <h2>Historia de XML: Cómo empezó y por qué</h2>
+                <p>
+                    XML (Extensible Markup Language) nació en la década de 1990 como una
+                    solución para estructurar datos de manera universal y compatible
+                    entre diferentes plataformas. Su origen se remonta a SGML (Standard
+                    Generalized Markup Language), un estándar creado en los años 70 por
+                    Charles Goldfarb, Ed Mosher y Ray Lorie en IBM. SGML no era un
+                    lenguaje en sí mismo, sino una especificación para definir lenguajes
+                    de marcado, de los cuales HTML fue una de sus aplicaciones más
+                    conocidas.
+                </p>
+                <p>
+                    HTML, aunque ampliamente adoptado, se volvió problemático debido a
+                    la falta de disciplina en su implementación, la fragmentación entre
+                    navegadores y la mezcla de contenido con presentación. Esto
+                    dificultó su uso para estructurar datos de manera eficiente.
+                </p>
+                <p>
+                    En respuesta a estas limitaciones, un grupo liderado por Jon Bosak,
+                    Tim Bray y James Clark desarrolló XML, con la idea de ofrecer un
+                    estándar flexible para almacenar y compartir datos estructurados en
+                    cualquier plataforma. XML fue respaldado por el W3C y adoptado
+                    rápidamente por la industria, incluyendo a Microsoft, que lo utilizó
+                    como base para su estrategia de interoperabilidad con .NET. Aunque
+                    XML no pertenece a ninguna empresa, su utilidad ha sido clave para
+                    conectar sistemas y facilitar el intercambio de información en
+                    múltiples sectores.
+                </p>
+            </article>
+
+            <article class="semana-article">
+                <h2>Diferencias entre XML y HTML</h2>
+                <p>
+                    Aunque XML y HTML son muy parecidos, se diseñaron para cosas
+                    distintas y distintas metas en mente:
+                </p>
+                <ul>
+                    <li>
+                        El diseño de XML está centrado en
+                        <strong>TRANSPORTAR</strong> datos, teniendo en consideración y
+                        centrándose en que son los datos.
+                    </li>
+                    <li>
+                        En cambio, HTML se ha diseñado para <strong>MOSTRAR</strong> los
+                        datos, teniendo en consideración y centrándose en cómo los datos
+                        se ven.
+                    </li>
+                    <li>
+                        Las etiquetas XML no están predefinidas como lo son en HTML. Es
+                        decir, las etiquetas de HTML están predefinidas para un uso en
+                        concreto (H1, Title, ...), mientras que las de XML son
+                        personalizables según la necesidad del usuario.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="semana-article">
+                <h2>Estructura (Tree)</h2>
+                <p>
+                    XML organiza la información en una estructura jerárquica en forma de
+                    árbol, donde un elemento raíz contiene a los demás elementos
+                    anidados. Cada elemento puede tener subelementos, atributos y
+                    contenido de texto, lo que permite representar datos de manera clara
+                    y estructurada.
+                </p>
+                <pre class="code-block">
+                    <code>empresa
+    └── departamento
+        └── empleado
+            ├── nombre
+            └── edad</code>
+                </pre>
+                <pre class="code-block">
+                    <code>&lt;empresa&gt;  &lt;!-- Elemento raíz --&gt;
+    &lt;departamento&gt;  &lt;!-- Hijo de empresa --&gt;
+        &lt;empleado&gt;  &lt;!-- Hijo de departamento --&gt;
+            &lt;nombre&gt;Juan&lt;/nombre&gt;  &lt;!-- Hijo de empleado --&gt;
+            &lt;edad&gt;30&lt;/edad&gt;
+        &lt;/empleado&gt;
+    &lt;/departamento&gt;
+&lt;/empresa&gt;</code>
+                </pre>
+            </article>
+
+            <article class="semana-article">
+                <h2>Sintaxis</h2>
+                <p>
+                    La sintaxis de XML define las reglas que deben seguirse para
+                    escribir documentos XML correctamente. Estas reglas aseguran que los
+                    datos sean bien estructurados, legibles y procesables por diferentes
+                    sistemas.
+                </p>
+                <p><strong>📌 Puntos clave de la sintaxis:</strong></p>
+                <ul>
+                    <li>Todas las etiquetas deben cerrarse correctamente.</li>
+                    <li>Debes estar correctamente anidadas (sangría).</li>
+                    <li>Distingue entre mayúsculas y minúsculas (case-sensitive).</li>
+                    <li>Los atributos deben estar entre comillas.</li>
+                </ul>
+                
+                <h3>Declaración del documento XML (Prolog)</h3>
+                <pre class="code-block">
+                    <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+                </pre>
+                <p>
+                    <strong>version="1.0" </strong> indica la versión de XML utilizada
+                    en el archivo.
+                </p>
+                <p>
+                    <strong>encoding="UTF-8"</strong> especifica la codificación de
+                    caracteres que va a utilizar el archivo.
+                </p>
+                
+                <h3>Elementos/etiquetas y atributos</h3>
+                <p>
+                    De manera similar a HTML, en XML los elementos/etiquetas son la base
+                    del lenguaje y siempre deben tener una etiqueta de apertura y otra
+                    de cierre.
+                </p>
+                <pre class="code-block">
+                    <code>&lt;nombre&gt;Juan&lt;/nombre&gt;  &lt;!-- Correcto --&gt;</code>
+                </pre>
+                <p>
+                    Tambien pueden autocerrarse si no contienen contenido, como el
+                    siguiente ejemplo:
+                </p>
+                <pre class="code-block">
+                    <code>&lt;imagen src="foto.jpg"/&gt;</code>
+                </pre>
+                
+                <h3>Anidación de elementos</h3>
+                <p>
+                    La anidación de elementos en XML se refiere a cómo los elementos
+                    pueden contener otros elementos dentro de ellos, creando una
+                    estructura jerárquica o en forma de árbol.
+                </p>
+                <pre class="code-block">
+                    <code>&lt;principal&gt;
+    &lt;hijo&gt;
+        &lt;subhijo&gt;....&lt;/subhijo&gt;
+    &lt;/hijo&gt;
+&lt;/principal&gt;</code>
+                </pre>
+                
+                <h3>Sensible a mayúsculas y minúsculas</h3>
+                <p>
+                    XML es un lenguaje <strong>case-sensitive</strong>, lo que significa
+                    que distingue entre mayúsculas y minúsculas.
+                </p>
+                <pre class="code-block">
+                    <code>&lt;nombre&gt;Juan&lt;/nombre&gt;  &lt;!-- Elemento 1 --&gt;
+&lt;NombrE&gt;Juan&lt;/NombrE&gt;  &lt;!-- Elemento 2 --&gt;</code>
+                </pre>
+                
+                <h3>Atributos en XML</h3>
+                <p>
+                    Los atributos son pares de clave-valor que se añaden a las etiquetas
+                    para proporcionar información adicional sobre el contenido de los
+                    elementos. Los atributos deben estar entre comillas.
+                </p>
+                <pre class="code-block">
+                    <code>&lt;persona nombre="Juan" edad="30" ciudad="Madrid"&gt;
+    &lt;direccion&gt;Calle Falsa 123&lt;/direccion&gt;
+&lt;/persona&gt;</code>
+                </pre>
+                
+                <h3>Comentarios en XML</h3>
+                <p>
+                    Los comentarios en XML no afectan al contenido, y se encierran entre
+                    &lt;!-- y --&gt;.
+                </p>
+                <pre class="code-block">
+                    <code>&lt;!-- Este es un comentario que no afecta al contenido --&gt;
+&lt;persona&gt;
+    &lt;nombre&gt;Juan&lt;/nombre&gt;
+&lt;/persona&gt;</code>
+                </pre>
+            </article>
+
+            <!-- Ejercicio Interactivo -->
+            <div class="integrated-exercise">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">
+                        <i class="bi bi-code-square"></i>
+                        Ejercicio Práctico: Tu Primer XML
+                    </h3>
+                    <p class="exercise-description">Crea tu primera estructura XML siguiendo las reglas de sintaxis</p>
+                    <div class="exercise-progress">Ejercicio 1</div>
+                </div>
+                <div class="exercise-body">
+                    <div class="exercise-instructions">
+                        <h6><i class="bi bi-info-circle me-2"></i>Instrucciones:</h6>
+                        <p>Crea un documento XML simple que represente información de una persona. Debe incluir:</p>
+                        <ul class="mb-2">
+                            <li>Declaración XML</li>
+                            <li>Elemento raíz llamado "persona"</li>
+                            <li>Elementos para: nombre, edad, y ciudad</li>
+                            <li>Un atributo "id" en el elemento persona</li>
+                        </ul>
+                    </div>
+                    
+                    <textarea class="mini-editor" id="xmlEditor1" placeholder="Escribe tu código XML aquí...">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tu código aquí -->
+                    </textarea>
+                    
+                    <div class="exercise-actions">
+                        <button class="btn-validate" onclick="validateXML1()">
+                            <i class="bi bi-check-circle"></i>
+                            Validar XML
+                        </button>
+                        <button class="btn-hint" onclick="showHint1()">
+                            <i class="bi bi-lightbulb"></i>
+                            Ver Pista
+                        </button>
+                    </div>
+                    
+                    <div class="exercise-result" id="result1"></div>
+                    <div class="exercise-hint" id="hint1">
+                        <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                        <p>Recuerda que todos los elementos deben estar dentro de un elemento raíz y cada etiqueta debe cerrarse correctamente.</p>
+                        <pre><code>&lt;persona id="1"&gt;
+    &lt;nombre&gt;Tu nombre&lt;/nombre&gt;
+    &lt;edad&gt;Tu edad&lt;/edad&gt;
+    &lt;ciudad&gt;Tu ciudad&lt;/ciudad&gt;
+&lt;/persona&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <article class="semana-article">
+                <h2>Casos de Uso Reales de XML</h2>
+                <p>XML se utiliza en múltiples ámbitos del desarrollo y la tecnología:</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">🌐</div>
+                            <h4>Servicios Web</h4>
+                            <p>SOAP, RSS, y APIs utilizan XML para el intercambio de datos entre aplicaciones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">⚙️</div>
+                            <h4>Configuración</h4>
+                            <p>Archivos de configuración en aplicaciones como Spring, Hibernate, y Maven.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">📄</div>
+                            <h4>Documentos</h4>
+                            <p>Microsoft Office, OpenOffice y otros utilizan XML internamente.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">🗄️</div>
+                            <h4>Bases de Datos</h4>
+                            <p>Almacenamiento e intercambio de datos estructurados entre sistemas.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article">
+                <h2>Ventajas y Desventajas de XML</h2>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="bi bi-check-circle me-2"></i>Ventajas</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-plus-circle text-success me-2"></i>Legible para humanos y máquinas</li>
+                                    <li class="mb-2"><i class="bi bi-plus-circle text-success me-2"></i>Independiente de plataforma</li>
+                                    <li class="mb-2"><i class="bi bi-plus-circle text-success me-2"></i>Estructura jerárquica clara</li>
+                                    <li class="mb-2"><i class="bi bi-plus-circle text-success me-2"></i>Soporte para validación</li>
+                                    <li class="mb-2"><i class="bi bi-plus-circle text-success me-2"></i>Ampliamente adoptado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card border-warning">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0"><i class="bi bi-exclamation-triangle me-2"></i>Desventajas</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-dash-circle text-warning me-2"></i>Verboso (archivos grandes)</li>
+                                    <li class="mb-2"><i class="bi bi-dash-circle text-warning me-2"></i>Procesamiento más lento que JSON</li>
+                                    <li class="mb-2"><i class="bi bi-dash-circle text-warning me-2"></i>Sintaxis estricta</li>
+                                    <li class="mb-2"><i class="bi bi-dash-circle text-warning me-2"></i>Curva de aprendizaje</li>
+                                    <li class="mb-2"><i class="bi bi-dash-circle text-warning me-2"></i>Redundancia en etiquetas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="semana-article">
+                <h2>Webgrafía y Recursos</h2>
+                <p>Fuentes consultadas y recursos adicionales:</p>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Documentación Oficial</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="https://www.w3.org/TR/xml/" target="_blank" class="text-decoration-none">W3C: XML Specification</a></li>
+                                    <li><a href="https://www.w3.org/XML/" target="_blank" class="text-decoration-none">W3C: XML Technology</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Herramientas Útiles</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="https://www.xmlvalidation.com/" target="_blank" class="text-decoration-none">XML Validator Online</a></li>
+                                    <li><a href="https://jsonformatter.org/xml-formatter" target="_blank" class="text-decoration-none">XML Formatter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="navegacion-puntos d-flex justify-content-between mt-5">
+                <a href="../semana1.html" class="btn btn-primary">
+                    <i class="me-1">←</i> Volver a la Semana 1
+                </a>
+                <a href="../Puntos/02_etiquetas.html" class="btn btn-primary">
+                    Siguiente: Etiquetas XML <i class="ms-1">→</i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer moderno -->
+<footer class="footer bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="footer-brand d-flex align-items-center mb-3">
+                    <span class="logo-icon me-2">XML</span>
+                    <span class="logo-text h4 mb-0">Curso XML</span>
+                </div>
+                <p class="footer-description">
+                    Domina los formatos de datos esenciales para el desarrollo web moderno.
+                </p>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Contenido</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="../../../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                    <li class="mb-2"><a href="../../1_semana/semana1.html" class="text-white text-decoration-none">Semana 1</a></li>
+                    <li class="mb-2"><a href="../../2_semana/semana2.html" class="text-white text-decoration-none">Semana 2</a></li>
+                    <li class="mb-2"><a href="../../3_semana/semana3.html" class="text-white text-decoration-none">Semana 3</a></li>
+                    <li class="mb-2"><a href="../../4_semana/semana4.html" class="text-white text-decoration-none">Semana 4</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-2 col-md-4">
+                <h5 class="text-uppercase mb-4">Recursos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://www.w3.org/XML/" target="_blank" class="text-white text-decoration-none">W3C XML</a></li>
+                    <li class="mb-2"><a href="https://developer.mozilla.org/es/docs/Web/XML" target="_blank" class="text-white text-decoration-none">MDN Web Docs</a></li>
+                    <li class="mb-2"><a href="https://json.org/" target="_blank" class="text-white text-decoration-none">JSON.org</a></li>
+                    <li class="mb-2"><a href="https://yaml.org/" target="_blank" class="text-white text-decoration-none">YAML Official</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-lg-4 col-md-4">
+                <h5 class="text-uppercase mb-4">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:alexviclop@gmail.com" class="text-white text-decoration-none">alexviclop@gmail.com</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span>Torrent, Valencia, España</span>
+                    </li>
+                </ul>
+                <div class="mt-4">
+                    <a href="../../../pages/formulario.html" class="btn btn-outline-light">Equipo</a>
+                </div>
+            </div>
+        </div>
+  
+        <hr class="my-4 bg-secondary">
+  
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Curso XML. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desarrollado por <a href="https://github.com/AVL05" target="_blank" class="text-white text-decoration-none">Alex Vicente Lopez</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/effects.js"></script>
+    <script src="../../../assets/js/teoria.js"></script>
+    
+    <!-- Script para ejercicio interactivo -->
+    <script>
+        function validateXML1() {
+            const editor = document.getElementById('xmlEditor1');
+            const result = document.getElementById('result1');
+            const code = editor.value.trim();
+            
+            // Validaciones básicas
+            const hasDeclaration = code.includes('<?xml');
+            const hasPersona = code.includes('<persona');
+            const hasId = code.includes('id=');
+            const hasNombre = code.includes('<nombre>');
+            const hasEdad = code.includes('<edad>');
+            const hasCiudad = code.includes('<ciudad>');
+            const hasClosingPersona = code.includes('</persona>');
+            
+            const isValid = hasDeclaration && hasPersona && hasId && hasNombre && hasEdad && hasCiudad && hasClosingPersona;
+            
+            result.style.display = 'block';
+            
+            if (isValid) {
+                result.className = 'exercise-result success';
+                result.innerHTML = '<i class="bi bi-check-circle me-2"></i><strong>¡Excelente!</strong> Tu XML es correcto. Has creado un documento bien formado con todos los elementos requeridos.';
+            } else {
+                result.className = 'exercise-result error';
+                let mensaje = '<i class="bi bi-x-circle me-2"></i><strong>Revisa tu código:</strong><ul class="mt-2 mb-0">';
+                
+                if (!hasDeclaration) mensaje += '<li>Falta la declaración XML (&lt;?xml version="1.0" encoding="UTF-8"?&gt;)</li>';
+                if (!hasPersona) mensaje += '<li>Falta el elemento raíz &lt;persona&gt;</li>';
+                if (!hasId) mensaje += '<li>Falta el atributo "id" en el elemento persona</li>';
+                if (!hasNombre) mensaje += '<li>Falta el elemento &lt;nombre&gt;</li>';
+                if (!hasEdad) mensaje += '<li>Falta el elemento &lt;edad&gt;</li>';
+                if (!hasCiudad) mensaje += '<li>Falta el elemento &lt;ciudad&gt;</li>';
+                if (!hasClosingPersona) mensaje += '<li>Falta cerrar la etiqueta &lt;/persona&gt;</li>';
+                
+                mensaje += '</ul>';
+                result.innerHTML = mensaje;
+            }
+        }
+        
+        function showHint1() {
+            const hint = document.getElementById('hint1');
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+# Configuración de GitHub Pages
+title: "Curso XML - Aprende Formatos de Datos Modernos"
+description: "Domina XML, JSON, YAML y Markdown en 4 semanas con nuestro curso práctico y completo"
+baseurl: "" # Dejar vacío si el repo se llama username.github.io, o poner /nombre-repo
+url: "https://avl05.github.io" # Tu URL de GitHub Pages (cambiar 'avl05' por tu usuario)
+
+# Metadatos del sitio
+author: Alex Vicente López
+email: alexviclop@gmail.com
+github_username: AVL05
+location: "Torrent, Valencia, España"
+
+# Configuración de Jekyll
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Configuración SEO
+lang: es
+timezone: Europe/Madrid
+
+# Configuración de compilación
+exclude:
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+
+include:
+  - _pages
+  - assets
+
+# Configuración de assets
+sass:
+  style: compressed
+  sourcemap: never
+
+# Configuración de las páginas
+collections:
+  semanas:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults para las páginas
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "Alex Vicente López"

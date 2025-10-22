@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicios Interactivos - Curso XML</title>
+    <meta name="description" content="Practica XML, JSON, YAML y Markdown con ejercicios interactivos y validación en tiempo real.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Codemirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+    <style>
+        .exercise-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .exercise-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .exercise-content {
+            padding: 2rem;
+        }
+
+        .CodeMirror {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            height: 300px;
+            font-size: 14px;
+        }
+
+        .result-panel {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        .result-error {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .exercise-tabs .nav-link {
+            border: none;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: var(--medium);
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .exercise-tabs .nav-link.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-instructions {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .exercise-hint {
+            background: #fff7ed;
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            display: none;
+        }
+
+        .progress-indicator {
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--success) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .score-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="logo-icon">XML</span>
+                <span class="logo-text">Curso XML</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ejercicios-interactivos.html">Ejercicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pages/formulario.html" class="btn btn-primary ms-lg-3">Equipo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" style="min-height: 60vh; padding: 6rem 0 4rem;">
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-subtitle">Práctica interactiva</span>
+                <h1 class="hero-title">
+                    <span class="text-gradient">Ejercicios</span> Interactivos
+                </h1>
+                <p class="hero-subtitle">Practica XML, JSON, YAML y Markdown con validación en tiempo real</p>
+                <div class="score-badge">
+                    <span id="score">0</span> / <span id="totalExercises">6</span> completados
+                </div>
+            </div>
+        </div>
+        <div class="hero-waves"></div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <!-- Indicador de progreso -->
+        <div class="progress-indicator">
+            <div class="progress-fill" id="progressBar" style="width: 0%;"></div>
+        </div>
+
+        <!-- Tabs de ejercicios -->
+        <div class="exercise-tabs">
+            <ul class="nav nav-tabs" id="exerciseTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#xml-basic">XML Básico</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#xml-advanced">XML Avanzado</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#json-basic">JSON</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#yaml-basic">YAML</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#markdown-basic">Markdown</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mixed">Mixto</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contenido de los tabs -->
+        <div class="tab-content" id="exerciseContent">
+            <!-- XML Básico -->
+            <div class="tab-pane fade show active" id="xml-basic">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-code-square me-2"></i>Ejercicio 1: XML Básico</h3>
+                        <p class="mb-0">Crea un documento XML válido para una lista de libros</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Crea un documento XML que contenga una biblioteca con al menos 2 libros. Cada libro debe tener:</p>
+                            <ul>
+                                <li>Título</li>
+                                <li>Autor</li>
+                                <li>Año de publicación</li>
+                                <li>ISBN (como atributo)</li>
+                            </ul>
+                        </div>
+                        <div class="exercise-hint" id="hint1">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>Recuerda incluir la declaración XML al inicio y que todos los elementos deben estar dentro de un elemento raíz.</p>
+                        </div>
+                        <textarea id="editor1" placeholder="Escribe tu código XML aquí...">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tu código aquí -->
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(1)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(1)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result1" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- XML Avanzado -->
+            <div class="tab-pane fade" id="xml-advanced">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-gear me-2"></i>Ejercicio 2: XML con Namespaces</h3>
+                        <p class="mb-0">Utiliza namespaces para organizar datos de diferentes dominios</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Crea un documento XML que use namespaces para combinar información de libros y películas:</p>
+                            <ul>
+                                <li>Namespace "book" para información de libros</li>
+                                <li>Namespace "movie" para información de películas</li>
+                                <li>Al menos un elemento de cada namespace</li>
+                            </ul>
+                        </div>
+                        <div class="exercise-hint" id="hint2">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>Usa xmlns para definir namespaces: xmlns:book="http://ejemplo.com/book"</p>
+                        </div>
+                        <textarea id="editor2" placeholder="Escribe tu código XML con namespaces...">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tu código aquí -->
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(2)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(2)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result2" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JSON -->
+            <div class="tab-pane fade" id="json-basic">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-braces me-2"></i>Ejercicio 3: JSON para API</h3>
+                        <p class="mb-0">Crea una estructura JSON para una API de usuarios</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Crea un objeto JSON que represente la respuesta de una API con:</p>
+                            <ul>
+                                <li>Array de usuarios (al menos 2)</li>
+                                <li>Cada usuario con: id, nombre, email, activo (boolean)</li>
+                                <li>Metadatos: total, página, por_página</li>
+                            </ul>
+                        </div>
+                        <div class="exercise-hint" id="hint3">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>Recuerda usar comillas dobles para todas las claves y valores string.</p>
+                        </div>
+                        <textarea id="editor3" placeholder="Escribe tu código JSON aquí...">
+{
+  // Tu código aquí
+}
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(3)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(3)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result3" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YAML -->
+            <div class="tab-pane fade" id="yaml-basic">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-list-ul me-2"></i>Ejercicio 4: YAML de Configuración</h3>
+                        <p class="mb-0">Crea un archivo de configuración YAML para una aplicación</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Crea un archivo YAML de configuración que incluya:</p>
+                            <ul>
+                                <li>Configuración de base de datos (host, puerto, usuario)</li>
+                                <li>Lista de servicios habilitados</li>
+                                <li>Configuración de logging con niveles</li>
+                            </ul>
+                        </div>
+                        <div class="exercise-hint" id="hint4">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>En YAML, la indentación es crucial. Usa espacios, no tabs.</p>
+                        </div>
+                        <textarea id="editor4" placeholder="Escribe tu código YAML aquí...">
+# Tu configuración YAML aquí
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(4)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(4)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result4" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Markdown -->
+            <div class="tab-pane fade" id="markdown-basic">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-markdown me-2"></i>Ejercicio 5: Documentación en Markdown</h3>
+                        <p class="mb-0">Crea documentación README usando Markdown</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Crea un README.md que incluya:</p>
+                            <ul>
+                                <li>Título principal y descripción</li>
+                                <li>Lista de características con checkboxes</li>
+                                <li>Bloque de código con instalación</li>
+                                <li>Enlaces a documentación externa</li>
+                            </ul>
+                        </div>
+                        <div class="exercise-hint" id="hint5">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>Usa # para títulos, - [ ] para checkboxes, ``` para bloques de código.</p>
+                        </div>
+                        <textarea id="editor5" placeholder="Escribe tu Markdown aquí...">
+# Tu README aquí
+
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(5)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(5)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result5" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio Mixto -->
+            <div class="tab-pane fade" id="mixed">
+                <div class="exercise-container">
+                    <div class="exercise-header">
+                        <h3><i class="bi bi-shuffle me-2"></i>Ejercicio 6: Desafío Mixto</h3>
+                        <p class="mb-0">Convierte datos entre diferentes formatos</p>
+                    </div>
+                    <div class="exercise-content">
+                        <div class="exercise-instructions">
+                            <h5><i class="bi bi-info-circle me-2"></i>Instrucciones:</h5>
+                            <p>Se proporciona esta estructura JSON. Conviértela a XML válido:</p>
+                            <pre><code>{
+  "productos": [
+    {"id": 1, "nombre": "Laptop", "precio": 999.99},
+    {"id": 2, "nombre": "Mouse", "precio": 29.99}
+  ]
+}</code></pre>
+                        </div>
+                        <div class="exercise-hint" id="hint6">
+                            <h6><i class="bi bi-lightbulb me-2"></i>Pista:</h6>
+                            <p>Los arrays JSON se pueden convertir en elementos XML repetidos.</p>
+                        </div>
+                        <textarea id="editor6" placeholder="Convierte el JSON a XML...">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tu conversión aquí -->
+                        </textarea>
+                        <div class="mt-3">
+                            <button class="btn btn-primary me-2" onclick="validateExercise(6)">
+                                <i class="bi bi-check-circle me-1"></i>Validar
+                            </button>
+                            <button class="btn btn-outline-warning" onclick="showHint(6)">
+                                <i class="bi bi-lightbulb me-1"></i>Ver Pista
+                            </button>
+                        </div>
+                        <div class="result-panel" id="result6" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificado de finalización -->
+        <div class="text-center mt-5" id="completionBadge" style="display: none;">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h3><i class="bi bi-trophy me-2"></i>¡Felicitaciones!</h3>
+                    <p>Has completado todos los ejercicios interactivos del curso.</p>
+                    <a href="../index.html" class="btn btn-light">Volver al curso</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-auto">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <span class="logo-icon me-2">XML</span>
+                        <span class="logo-text h4 mb-0">Curso XML</span>
+                    </div>
+                    <p class="footer-description">
+                        Domina los formatos de datos esenciales para el desarrollo web moderno.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <h5 class="text-uppercase mb-4">Desarrollado por</h5>
+                    <p class="mb-0">
+                        <a href="https://github.com/AVL05" target="_blank" class="text-white text-decoration-none">
+                            <i class="bi bi-github me-2"></i>Alex Vicente Lopez
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/markdown/markdown.min.js"></script>
+
+    <script>
+        // Estado global
+        let completedExercises = 0;
+        const totalExercises = 6;
+        let editors = {};
+
+        // Inicializar editores CodeMirror
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración de editores
+            const editorConfigs = {
+                1: { mode: 'xml' },
+                2: { mode: 'xml' },
+                3: { mode: 'application/json' },
+                4: { mode: 'yaml' },
+                5: { mode: 'markdown' },
+                6: { mode: 'xml' }
+            };
+
+            // Crear editores
+            for (let i = 1; i <= totalExercises; i++) {
+                editors[i] = CodeMirror.fromTextArea(document.getElementById(`editor${i}`), {
+                    lineNumbers: true,
+                    theme: 'dracula',
+                    mode: editorConfigs[i].mode,
+                    indentUnit: 2,
+                    lineWrapping: true
+                });
+            }
+
+            // Cargar progreso guardado
+            loadProgress();
+        });
+
+        // Mostrar pista
+        function showHint(exerciseId) {
+            const hint = document.getElementById(`hint${exerciseId}`);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Validar ejercicio
+        function validateExercise(exerciseId) {
+            const code = editors[exerciseId].getValue();
+            const result = document.getElementById(`result${exerciseId}`);
+            
+            let isValid = false;
+            let message = '';
+
+            try {
+                switch(exerciseId) {
+                    case 1:
+                        isValid = validateXMLBasic(code);
+                        message = isValid ? '¡Excelente! Tu XML está bien formado y contiene los elementos requeridos.' : 'Revisa la estructura XML. Asegúrate de incluir biblioteca, libros con título, autor, año e ISBN como atributo.';
+                        break;
+                    case 2:
+                        isValid = validateXMLNamespaces(code);
+                        message = isValid ? '¡Perfecto! Has usado namespaces correctamente.' : 'Verifica que uses namespaces para book y movie con xmlns.';
+                        break;
+                    case 3:
+                        isValid = validateJSON(code);
+                        message = isValid ? '¡JSON válido! Estructura de API correcta.' : 'Revisa la sintaxis JSON y asegúrate de incluir usuarios y metadatos.';
+                        break;
+                    case 4:
+                        isValid = validateYAML(code);
+                        message = isValid ? '¡YAML correcto! Configuración bien estructurada.' : 'Verifica la indentación YAML y que incluyas database, services y logging.';
+                        break;
+                    case 5:
+                        isValid = validateMarkdown(code);
+                        message = isValid ? '¡Markdown excelente! README bien estructurado.' : 'Incluye título con #, lista con checkboxes - [ ], código con ``` y enlaces.';
+                        break;
+                    case 6:
+                        isValid = validateMixed(code);
+                        message = isValid ? '¡Conversión perfecta! Has convertido correctamente JSON a XML.' : 'Revisa que el XML represente la estructura JSON con productos y sus propiedades.';
+                        break;
+                }
+
+                // Mostrar resultado
+                result.style.display = 'block';
+                result.className = `result-panel ${isValid ? 'result-success' : 'result-error'}`;
+                result.innerHTML = `
+                    <i class="bi bi-${isValid ? 'check-circle' : 'x-circle'} me-2"></i>
+                    ${message}
+                `;
+
+                // Actualizar progreso
+                if (isValid && !isExerciseCompleted(exerciseId)) {
+                    markExerciseCompleted(exerciseId);
+                }
+
+            } catch (error) {
+                result.style.display = 'block';
+                result.className = 'result-panel result-error';
+                result.innerHTML = `<i class="bi bi-x-circle me-2"></i>Error: ${error.message}`;
+            }
+        }
+
+        // Funciones de validación
+        function validateXMLBasic(code) {
+            return code.includes('<?xml') && 
+                   code.includes('<biblioteca') && 
+                   code.includes('<libro') && 
+                   code.includes('isbn=') && 
+                   code.includes('<titulo>') && 
+                   code.includes('<autor>') && 
+                   code.includes('<año>');
+        }
+
+        function validateXMLNamespaces(code) {
+            return code.includes('xmlns:book=') && 
+                   code.includes('xmlns:movie=') && 
+                   code.includes('<book:') && 
+                   code.includes('<movie:');
+        }
+
+        function validateJSON(code) {
+            try {
+                const parsed = JSON.parse(code.replace(/\/\/.*/g, ''));
+                return parsed.usuarios && 
+                       Array.isArray(parsed.usuarios) && 
+                       parsed.usuarios.length >= 2 &&
+                       parsed.total !== undefined;
+            } catch {
+                return false;
+            }
+        }
+
+        function validateYAML(code) {
+            return code.includes('database:') && 
+                   code.includes('services:') && 
+                   code.includes('logging:') && 
+                   code.includes('host:') && 
+                   code.includes('port:');
+        }
+
+        function validateMarkdown(code) {
+            return code.includes('# ') && 
+                   code.includes('- [ ]') && 
+                   code.includes('```') && 
+                   code.includes('[') && 
+                   code.includes('](');
+        }
+
+        function validateMixed(code) {
+            return code.includes('<?xml') && 
+                   code.includes('<productos>') && 
+                   code.includes('<producto') && 
+                   code.includes('<id>1</id>') && 
+                   code.includes('<nombre>Laptop</nombre>');
+        }
+
+        // Gestión del progreso
+        function isExerciseCompleted(exerciseId) {
+            const completed = JSON.parse(localStorage.getItem('completedExercises') || '[]');
+            return completed.includes(exerciseId);
+        }
+
+        function markExerciseCompleted(exerciseId) {
+            let completed = JSON.parse(localStorage.getItem('completedExercises') || '[]');
+            if (!completed.includes(exerciseId)) {
+                completed.push(exerciseId);
+                localStorage.setItem('completedExercises', JSON.stringify(completed));
+                updateProgress();
+            }
+        }
+
+        function loadProgress() {
+            const completed = JSON.parse(localStorage.getItem('completedExercises') || '[]');
+            completedExercises = completed.length;
+            updateProgressDisplay();
+        }
+
+        function updateProgress() {
+            completedExercises++;
+            updateProgressDisplay();
+            
+            if (completedExercises === totalExercises) {
+                document.getElementById('completionBadge').style.display = 'block';
+            }
+        }
+
+        function updateProgressDisplay() {
+            const percentage = (completedExercises / totalExercises) * 100;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+            document.getElementById('score').textContent = completedExercises;
+            document.getElementById('totalExercises').textContent = totalExercises;
+        }
+    </script>
+</body>
+</html>
